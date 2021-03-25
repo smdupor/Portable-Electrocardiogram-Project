@@ -1,0 +1,340 @@
+Timing Analyzer report for relay_logic
+Fri Feb 22 21:21:16 2008
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clock'
+  6. Clock Hold: 'clock'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                   ;
++------------------------------+-----------+----------------------------------+----------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+--------------+
+; Type                         ; Slack     ; Required Time                    ; Actual Time                      ; From                                    ; To                                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-----------+----------------------------------+----------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A       ; None                             ; 4.382 ns                         ; reset                                   ; relay_logic:inst|counter:LEVEL|count[0] ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A       ; None                             ; 9.911 ns                         ; relay_logic:inst|counter:LEVEL|count[3] ; pin11[1]                                ; clock      ; --       ; 0            ;
+; Worst-case th                ; N/A       ; None                             ; -2.527 ns                        ; reset                                   ; relay_logic:inst|counter:LEVEL|count[1] ; --         ; clock    ; 0            ;
+; Clock Setup: 'clock'         ; 15.629 ns ; 50.00 MHz ( period = 20.000 ns ) ; 228.78 MHz ( period = 4.371 ns ) ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 0            ;
+; Clock Hold: 'clock'          ; 1.329 ns  ; 50.00 MHz ( period = 20.000 ns ) ; N/A                              ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 0            ;
+; Total number of failed paths ;           ;                                  ;                                  ;                                         ;                                         ;            ;          ; 0            ;
++------------------------------+-----------+----------------------------------+----------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+--------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                ;
++-------------------------------------------------------+--------------------+------+-------+-------------+
+; Option                                                ; Setting            ; From ; To    ; Entity Name ;
++-------------------------------------------------------+--------------------+------+-------+-------------+
+; Device Name                                           ; EP1S10F780C6       ;      ;       ;             ;
+; Timing Models                                         ; Final              ;      ;       ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;       ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;       ;             ;
+; Number of paths to report                             ; 200                ;      ;       ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;       ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;       ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;       ;             ;
+; Default hold multicycle                               ; Same As Multicycle ;      ;       ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;       ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;       ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;       ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;       ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;       ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;       ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;       ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;       ;             ;
+; Use TimeQuest Timing Analyzer                         ; Off                ;      ;       ;             ;
+; Clock Settings                                        ; clock              ;      ; clock ;             ;
++-------------------------------------------------------+--------------------+------+-------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ; clock              ; User Pin ; 50.0 MHz         ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                                         ;
++-----------+----------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack     ; Actual fmax (period)             ; From                                    ; To                                      ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------+----------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; 15.629 ns ; 228.78 MHz ( period = 4.371 ns ) ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 20.000 ns                   ; 19.818 ns                 ; 4.189 ns                ;
+; 15.928 ns ; 245.58 MHz ( period = 4.072 ns ) ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.886 ns                ;
+; 15.993 ns ; 249.56 MHz ( period = 4.007 ns ) ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 20.000 ns                   ; 19.818 ns                 ; 3.825 ns                ;
+; 15.998 ns ; 249.88 MHz ( period = 4.002 ns ) ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 20.000 ns                   ; 19.818 ns                 ; 3.820 ns                ;
+; 16.053 ns ; 253.36 MHz ( period = 3.947 ns ) ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.761 ns                ;
+; 16.159 ns ; 260.35 MHz ( period = 3.841 ns ) ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.655 ns                ;
+; 16.292 ns ; 269.69 MHz ( period = 3.708 ns ) ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.522 ns                ;
+; 16.297 ns ; 270.05 MHz ( period = 3.703 ns ) ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.517 ns                ;
+; 16.328 ns ; 272.33 MHz ( period = 3.672 ns ) ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.486 ns                ;
+; 16.417 ns ; 279.10 MHz ( period = 3.583 ns ) ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.397 ns                ;
+; 16.422 ns ; 279.49 MHz ( period = 3.578 ns ) ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.392 ns                ;
+; 16.523 ns ; 287.60 MHz ( period = 3.477 ns ) ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.291 ns                ;
+; 16.528 ns ; 288.02 MHz ( period = 3.472 ns ) ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 20.000 ns                   ; 19.814 ns                 ; 3.286 ns                ;
+; 16.627 ns ; 296.47 MHz ( period = 3.373 ns ) ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 20.000 ns                   ; 19.810 ns                 ; 3.183 ns                ;
+; 16.752 ns ; 307.88 MHz ( period = 3.248 ns ) ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 20.000 ns                   ; 19.810 ns                 ; 3.058 ns                ;
+; 16.858 ns ; 318.27 MHz ( period = 3.142 ns ) ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 20.000 ns                   ; 19.810 ns                 ; 2.952 ns                ;
++-----------+----------------------------------+-----------------------------------------+-----------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Hold: 'clock'                                                                                                                                                                                            ;
++---------------+-----------------------------------------+-----------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; Minimum Slack ; From                                    ; To                                      ; From Clock ; To Clock ; Required Hold Relationship ; Required Shortest P2P Time ; Actual Shortest P2P Time ;
++---------------+-----------------------------------------+-----------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+; 1.329 ns      ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 1.253 ns                 ;
+; 1.353 ns      ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 1.277 ns                 ;
+; 1.365 ns      ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 1.289 ns                 ;
+; 1.821 ns      ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 1.745 ns                 ;
+; 2.267 ns      ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 0.000 ns                   ; -0.080 ns                  ; 2.187 ns                 ;
+; 2.538 ns      ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 2.462 ns                 ;
+; 2.581 ns      ; relay_logic:inst|counter:LEVEL|count[0] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 2.505 ns                 ;
+; 2.663 ns      ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 0.000 ns                   ; -0.072 ns                  ; 2.591 ns                 ;
+; 2.758 ns      ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 0.000 ns                   ; -0.072 ns                  ; 2.686 ns                 ;
+; 2.819 ns      ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[3] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 2.743 ns                 ;
+; 3.032 ns      ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 0.000 ns                   ; -0.080 ns                  ; 2.952 ns                 ;
+; 3.263 ns      ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[1] ; clock      ; clock    ; 0.000 ns                   ; -0.080 ns                  ; 3.183 ns                 ;
+; 3.362 ns      ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[2] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 3.286 ns                 ;
+; 3.731 ns      ; relay_logic:inst|counter:LEVEL|count[3] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 3.655 ns                 ;
+; 3.962 ns      ; relay_logic:inst|counter:LEVEL|count[2] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 0.000 ns                   ; -0.076 ns                  ; 3.886 ns                 ;
+; 4.261 ns      ; relay_logic:inst|counter:LEVEL|count[1] ; relay_logic:inst|counter:LEVEL|count[0] ; clock      ; clock    ; 0.000 ns                   ; -0.072 ns                  ; 4.189 ns                 ;
++---------------+-----------------------------------------+-----------------------------------------+------------+----------+----------------------------+----------------------------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; tsu                                                                                             ;
++-------+--------------+------------+--------+-----------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                                      ; To Clock ;
++-------+--------------+------------+--------+-----------------------------------------+----------+
+; N/A   ; None         ; 4.382 ns   ; reset  ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A   ; None         ; 4.379 ns   ; toLow  ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
+; N/A   ; None         ; 4.369 ns   ; toLow  ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A   ; None         ; 4.334 ns   ; toLow  ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
+; N/A   ; None         ; 4.278 ns   ; sample ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A   ; None         ; 4.018 ns   ; reset  ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
+; N/A   ; None         ; 4.013 ns   ; reset  ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
+; N/A   ; None         ; 3.914 ns   ; sample ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
+; N/A   ; None         ; 3.909 ns   ; sample ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
+; N/A   ; None         ; 3.683 ns   ; reset  ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A   ; None         ; 3.579 ns   ; sample ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A   ; None         ; 3.241 ns   ; toLow  ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A   ; None         ; 2.822 ns   ; toHigh ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A   ; None         ; 2.812 ns   ; toHigh ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A   ; None         ; 2.797 ns   ; toHigh ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
+; N/A   ; None         ; 2.685 ns   ; toHigh ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
++-------+--------------+------------+--------+-----------------------------------------+----------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; tco                                                                                                 ;
++-------+--------------+------------+-----------------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                                    ; To       ; From Clock ;
++-------+--------------+------------+-----------------------------------------+----------+------------+
+; N/A   ; None         ; 9.911 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin11[1] ; clock      ;
+; N/A   ; None         ; 9.897 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin3[2]  ; clock      ;
+; N/A   ; None         ; 9.815 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin11[1] ; clock      ;
+; N/A   ; None         ; 9.777 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin3[2]  ; clock      ;
+; N/A   ; None         ; 9.654 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin11[2] ; clock      ;
+; N/A   ; None         ; 9.651 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin11[0] ; clock      ;
+; N/A   ; None         ; 9.642 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin13    ; clock      ;
+; N/A   ; None         ; 9.624 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin3[1]  ; clock      ;
+; N/A   ; None         ; 9.617 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin3[0]  ; clock      ;
+; N/A   ; None         ; 9.600 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; pin11[1] ; clock      ;
+; N/A   ; None         ; 9.568 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; pin3[2]  ; clock      ;
+; N/A   ; None         ; 9.549 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin11[0] ; clock      ;
+; N/A   ; None         ; 9.545 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin11[2] ; clock      ;
+; N/A   ; None         ; 9.526 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin13    ; clock      ;
+; N/A   ; None         ; 9.333 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; pin11[0] ; clock      ;
+; N/A   ; None         ; 9.329 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; pin11[2] ; clock      ;
+; N/A   ; None         ; 9.313 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; pin13    ; clock      ;
+; N/A   ; None         ; 9.258 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin3[1]  ; clock      ;
+; N/A   ; None         ; 9.254 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin3[0]  ; clock      ;
+; N/A   ; None         ; 9.231 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin11[1] ; clock      ;
+; N/A   ; None         ; 9.208 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin3[2]  ; clock      ;
+; N/A   ; None         ; 9.170 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin3[1]  ; clock      ;
+; N/A   ; None         ; 9.163 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin3[0]  ; clock      ;
+; N/A   ; None         ; 8.997 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; pin3[1]  ; clock      ;
+; N/A   ; None         ; 8.991 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; pin3[0]  ; clock      ;
+; N/A   ; None         ; 8.966 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin11[2] ; clock      ;
+; N/A   ; None         ; 8.965 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin11[0] ; clock      ;
+; N/A   ; None         ; 8.954 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin13    ; clock      ;
+; N/A   ; None         ; 8.614 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; pin12    ; clock      ;
+; N/A   ; None         ; 8.244 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; pin12    ; clock      ;
+; N/A   ; None         ; 8.160 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; pin12    ; clock      ;
+; N/A   ; None         ; 7.468 ns   ; relay_logic:inst|counter:LEVEL|count[0] ; gain[0]  ; clock      ;
+; N/A   ; None         ; 7.227 ns   ; relay_logic:inst|counter:LEVEL|count[3] ; gain[3]  ; clock      ;
+; N/A   ; None         ; 6.986 ns   ; relay_logic:inst|counter:LEVEL|count[2] ; gain[2]  ; clock      ;
+; N/A   ; None         ; 6.813 ns   ; relay_logic:inst|counter:LEVEL|count[1] ; gain[1]  ; clock      ;
++-------+--------------+------------+-----------------------------------------+----------+------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; th                                                                                                    ;
++---------------+-------------+-----------+--------+-----------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                                      ; To Clock ;
++---------------+-------------+-----------+--------+-----------------------------------------+----------+
+; N/A           ; None        ; -2.527 ns ; reset  ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A           ; None        ; -2.575 ns ; toHigh ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
+; N/A           ; None        ; -2.582 ns ; reset  ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
+; N/A           ; None        ; -2.584 ns ; reset  ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A           ; None        ; -2.687 ns ; toHigh ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
+; N/A           ; None        ; -2.702 ns ; toHigh ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A           ; None        ; -2.712 ns ; toHigh ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A           ; None        ; -2.799 ns ; reset  ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
+; N/A           ; None        ; -3.131 ns ; toLow  ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A           ; None        ; -3.469 ns ; sample ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A           ; None        ; -3.799 ns ; sample ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
+; N/A           ; None        ; -3.804 ns ; sample ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
+; N/A           ; None        ; -4.168 ns ; sample ; relay_logic:inst|counter:LEVEL|count[0] ; clock    ;
+; N/A           ; None        ; -4.197 ns ; toLow  ; relay_logic:inst|counter:LEVEL|count[2] ; clock    ;
+; N/A           ; None        ; -4.234 ns ; toLow  ; relay_logic:inst|counter:LEVEL|count[1] ; clock    ;
+; N/A           ; None        ; -4.240 ns ; toLow  ; relay_logic:inst|counter:LEVEL|count[3] ; clock    ;
++---------------+-------------+-----------+--------+-----------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Fri Feb 22 21:21:15 2008
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off relay_logic -c relay_logic --timing_analysis_only
+Info: Slack time is 15.629 ns for clock "clock" between source register "relay_logic:inst|counter:LEVEL|count[1]" and destination register "relay_logic:inst|counter:LEVEL|count[0]"
+    Info: Fmax is 228.78 MHz (period= 4.371 ns)
+    Info: + Largest register to register requirement is 19.818 ns
+        Info: + Setup relationship between source and destination is 20.000 ns
+            Info: + Latch edge is 20.000 ns
+                Info: Clock period of Destination clock "clock" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clock" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+        Info: + Largest clock skew is 0.004 ns
+            Info: + Shortest clock path from clock "clock" to destination register is 3.199 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.868 ns) = 0.868 ns; Loc. = PIN_R25; Fanout = 4; CLK Node = 'clock'
+                Info: 2: + IC(1.771 ns) + CELL(0.560 ns) = 3.199 ns; Loc. = LC_X52_Y3_N0; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[0]'
+                Info: Total cell delay = 1.428 ns ( 44.64 % )
+                Info: Total interconnect delay = 1.771 ns ( 55.36 % )
+            Info: - Longest clock path from clock "clock" to source register is 3.195 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.868 ns) = 0.868 ns; Loc. = PIN_R25; Fanout = 4; CLK Node = 'clock'
+                Info: 2: + IC(1.767 ns) + CELL(0.560 ns) = 3.195 ns; Loc. = LC_X52_Y4_N4; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[1]'
+                Info: Total cell delay = 1.428 ns ( 44.69 % )
+                Info: Total interconnect delay = 1.767 ns ( 55.31 % )
+        Info: - Micro clock to output delay of source is 0.176 ns
+        Info: - Micro setup delay of destination is 0.010 ns
+    Info: - Longest register to register delay is 4.189 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X52_Y4_N4; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[1]'
+        Info: 2: + IC(1.105 ns) + CELL(0.087 ns) = 1.192 ns; Loc. = LC_X52_Y3_N1; Fanout = 1; COMB Node = 'relay_logic:inst|counter:LEVEL|count[2]~956'
+        Info: 3: + IC(1.108 ns) + CELL(0.087 ns) = 2.387 ns; Loc. = LC_X52_Y4_N2; Fanout = 4; COMB Node = 'relay_logic:inst|counter:LEVEL|count[2]~957'
+        Info: 4: + IC(1.076 ns) + CELL(0.726 ns) = 4.189 ns; Loc. = LC_X52_Y3_N0; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[0]'
+        Info: Total cell delay = 0.900 ns ( 21.48 % )
+        Info: Total interconnect delay = 3.289 ns ( 78.52 % )
+Info: Minimum slack time is 1.329 ns for clock "clock" between source register "relay_logic:inst|counter:LEVEL|count[3]" and destination register "relay_logic:inst|counter:LEVEL|count[3]"
+    Info: + Shortest register to register delay is 1.253 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X52_Y3_N5; Fanout = 13; REG Node = 'relay_logic:inst|counter:LEVEL|count[3]'
+        Info: 2: + IC(0.670 ns) + CELL(0.583 ns) = 1.253 ns; Loc. = LC_X52_Y3_N5; Fanout = 13; REG Node = 'relay_logic:inst|counter:LEVEL|count[3]'
+        Info: Total cell delay = 0.583 ns ( 46.53 % )
+        Info: Total interconnect delay = 0.670 ns ( 53.47 % )
+    Info: - Smallest register to register requirement is -0.076 ns
+        Info: + Hold relationship between source and destination is 0.000 ns
+            Info: + Latch edge is 0.000 ns
+                Info: Clock period of Destination clock "clock" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Destination register is 1
+                Info: Multicycle Hold factor for Destination register is 1
+            Info: - Launch edge is 0.000 ns
+                Info: Clock period of Source clock "clock" is 20.000 ns with  offset of 0.000 ns and duty cycle of 50
+                Info: Multicycle Setup factor for Source register is 1
+                Info: Multicycle Hold factor for Source register is 1
+        Info: + Smallest clock skew is 0.000 ns
+            Info: + Longest clock path from clock "clock" to destination register is 3.199 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.868 ns) = 0.868 ns; Loc. = PIN_R25; Fanout = 4; CLK Node = 'clock'
+                Info: 2: + IC(1.771 ns) + CELL(0.560 ns) = 3.199 ns; Loc. = LC_X52_Y3_N5; Fanout = 13; REG Node = 'relay_logic:inst|counter:LEVEL|count[3]'
+                Info: Total cell delay = 1.428 ns ( 44.64 % )
+                Info: Total interconnect delay = 1.771 ns ( 55.36 % )
+            Info: - Shortest clock path from clock "clock" to source register is 3.199 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.868 ns) = 0.868 ns; Loc. = PIN_R25; Fanout = 4; CLK Node = 'clock'
+                Info: 2: + IC(1.771 ns) + CELL(0.560 ns) = 3.199 ns; Loc. = LC_X52_Y3_N5; Fanout = 13; REG Node = 'relay_logic:inst|counter:LEVEL|count[3]'
+                Info: Total cell delay = 1.428 ns ( 44.64 % )
+                Info: Total interconnect delay = 1.771 ns ( 55.36 % )
+        Info: - Micro clock to output delay of source is 0.176 ns
+        Info: + Micro hold delay of destination is 0.100 ns
+Info: tsu for register "relay_logic:inst|counter:LEVEL|count[0]" (data pin = "reset", clock pin = "clock") is 4.382 ns
+    Info: + Longest pin to register delay is 7.571 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.295 ns) = 1.295 ns; Loc. = PIN_W6; Fanout = 5; PIN Node = 'reset'
+        Info: 2: + IC(4.142 ns) + CELL(0.332 ns) = 5.769 ns; Loc. = LC_X52_Y4_N2; Fanout = 4; COMB Node = 'relay_logic:inst|counter:LEVEL|count[2]~957'
+        Info: 3: + IC(1.076 ns) + CELL(0.726 ns) = 7.571 ns; Loc. = LC_X52_Y3_N0; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[0]'
+        Info: Total cell delay = 2.353 ns ( 31.08 % )
+        Info: Total interconnect delay = 5.218 ns ( 68.92 % )
+    Info: + Micro setup delay of destination is 0.010 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 3.199 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.868 ns) = 0.868 ns; Loc. = PIN_R25; Fanout = 4; CLK Node = 'clock'
+        Info: 2: + IC(1.771 ns) + CELL(0.560 ns) = 3.199 ns; Loc. = LC_X52_Y3_N0; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[0]'
+        Info: Total cell delay = 1.428 ns ( 44.64 % )
+        Info: Total interconnect delay = 1.771 ns ( 55.36 % )
+Info: tco from clock "clock" to destination pin "pin11[1]" through register "relay_logic:inst|counter:LEVEL|count[3]" is 9.911 ns
+    Info: + Longest clock path from clock "clock" to source register is 3.199 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.868 ns) = 0.868 ns; Loc. = PIN_R25; Fanout = 4; CLK Node = 'clock'
+        Info: 2: + IC(1.771 ns) + CELL(0.560 ns) = 3.199 ns; Loc. = LC_X52_Y3_N5; Fanout = 13; REG Node = 'relay_logic:inst|counter:LEVEL|count[3]'
+        Info: Total cell delay = 1.428 ns ( 44.64 % )
+        Info: Total interconnect delay = 1.771 ns ( 55.36 % )
+    Info: + Micro clock to output delay of source is 0.176 ns
+    Info: + Longest register to pin delay is 6.536 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X52_Y3_N5; Fanout = 13; REG Node = 'relay_logic:inst|counter:LEVEL|count[3]'
+        Info: 2: + IC(1.212 ns) + CELL(0.459 ns) = 1.671 ns; Loc. = LC_X52_Y4_N7; Fanout = 1; COMB Node = 'relay_logic:inst|count_to_relays:MAP|pin11[1]~11'
+        Info: 3: + IC(2.370 ns) + CELL(2.495 ns) = 6.536 ns; Loc. = PIN_N7; Fanout = 0; PIN Node = 'pin11[1]'
+        Info: Total cell delay = 2.954 ns ( 45.20 % )
+        Info: Total interconnect delay = 3.582 ns ( 54.80 % )
+Info: th for register "relay_logic:inst|counter:LEVEL|count[1]" (data pin = "reset", clock pin = "clock") is -2.527 ns
+    Info: + Longest clock path from clock "clock" to destination register is 3.195 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.868 ns) = 0.868 ns; Loc. = PIN_R25; Fanout = 4; CLK Node = 'clock'
+        Info: 2: + IC(1.767 ns) + CELL(0.560 ns) = 3.195 ns; Loc. = LC_X52_Y4_N4; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[1]'
+        Info: Total cell delay = 1.428 ns ( 44.69 % )
+        Info: Total interconnect delay = 1.767 ns ( 55.31 % )
+    Info: + Micro hold delay of destination is 0.100 ns
+    Info: - Shortest pin to register delay is 5.822 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.295 ns) = 1.295 ns; Loc. = PIN_W6; Fanout = 5; PIN Node = 'reset'
+        Info: 2: + IC(4.163 ns) + CELL(0.364 ns) = 5.822 ns; Loc. = LC_X52_Y4_N4; Fanout = 16; REG Node = 'relay_logic:inst|counter:LEVEL|count[1]'
+        Info: Total cell delay = 1.659 ns ( 28.50 % )
+        Info: Total interconnect delay = 4.163 ns ( 71.50 % )
+Info: All timing requirements were met. See Report window for more details.
+Info: Quartus II Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Processing ended: Fri Feb 22 21:21:16 2008
+    Info: Elapsed time: 00:00:02
+
+

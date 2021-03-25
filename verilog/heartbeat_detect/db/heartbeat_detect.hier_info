@@ -1,0 +1,9 @@
+|heartbeat_detect
+clock => past.CLK
+clock => detected~reg0.CLK
+toLow => always0~0.IN1
+toLow => detected~0.OUTPUTSELECT
+toLow => past.DATAIN
+detected <= detected~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

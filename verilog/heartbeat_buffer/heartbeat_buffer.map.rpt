@@ -1,0 +1,334 @@
+Analysis & Synthesis report for heartbeat_buffer
+Sat Feb 16 15:43:07 2008
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Source assignments for lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_jtk1:auto_generated
+ 11. Parameter Settings for User Entity Instance: lpm_ram_dp0:inst|altsyncram:altsyncram_component
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sat Feb 16 15:43:07 2008         ;
+; Quartus II Version          ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name               ; heartbeat_buffer                              ;
+; Top-level Entity Name       ; top                                           ;
+; Family                      ; Stratix                                       ;
+; Total logic elements        ; 381                                           ;
+; Total pins                  ; 59                                            ;
+; Total virtual pins          ; 0                                             ;
+; Total memory bits           ; 131,072                                       ;
+; DSP block 9-bit elements    ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
+; Total DLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP1S10F780C6       ;                    ;
+; Top-level entity name                                              ; top                ; heartbeat_buffer   ;
+; Family name                                                        ; Stratix            ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Stratix/Stratix GX                       ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto DSP Block Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; Unlimited          ; Unlimited          ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Maximum Number of M-RAM Memory Blocks                              ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+
+; lpm_ram_dp0.v                    ; yes             ; User Verilog HDL File              ; K:/ece480/verilog/heartbeat_buffer/lpm_ram_dp0.v                  ;
+; hb_mem.v                         ; yes             ; User Verilog HDL File              ; K:/ece480/verilog/heartbeat_buffer/hb_mem.v                       ;
+; top.bdf                          ; yes             ; User Block Diagram/Schematic File  ; K:/ece480/verilog/heartbeat_buffer/top.bdf                        ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/quartus60/libraries/megafunctions/altsyncram.tdf        ;
+; stratix_ram_block.inc            ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/stratix_ram_block.inc ;
+; lpm_mux.inc                      ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/lpm_mux.inc           ;
+; lpm_decode.inc                   ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/lpm_decode.inc        ;
+; aglobal60.inc                    ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/aglobal60.inc         ;
+; altsyncram.inc                   ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/altsyncram.inc        ;
+; a_rdenreg.inc                    ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/a_rdenreg.inc         ;
+; altrom.inc                       ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/altrom.inc            ;
+; altram.inc                       ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/altram.inc            ;
+; altdpram.inc                     ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/altdpram.inc          ;
+; altqpram.inc                     ; yes             ; Other                              ; c:/altera/quartus60/libraries/megafunctions/altqpram.inc          ;
+; db/altsyncram_jtk1.tdf           ; yes             ; Auto-Generated Megafunction        ; K:/ece480/verilog/heartbeat_buffer/db/altsyncram_jtk1.tdf         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Total logic elements                        ; 381    ;
+;     -- Combinational with no register       ; 303    ;
+;     -- Register only                        ; 0      ;
+;     -- Combinational with a register        ; 78     ;
+;                                             ;        ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 79     ;
+;     -- 3 input functions                    ; 112    ;
+;     -- 2 input functions                    ; 175    ;
+;     -- 1 input functions                    ; 14     ;
+;     -- 0 input functions                    ; 1      ;
+;         -- Combinational cells for routing  ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 159    ;
+;     -- arithmetic mode                      ; 222    ;
+;     -- qfbk mode                            ; 0      ;
+;     -- register cascade mode                ; 0      ;
+;     -- synchronous clear/load mode          ; 27     ;
+;     -- asynchronous clear/load mode         ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 78     ;
+; Total logic cells in carry chains           ; 240    ;
+; I/O pins                                    ; 59     ;
+; Total memory bits                           ; 131072 ;
+; Maximum fan-out node                        ; clock  ;
+; Maximum fan-out                             ; 94     ;
+; Total fan-out                               ; 1679   ;
+; Average fan-out                             ; 3.68   ;
++---------------------------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                             ;
++-------------------------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------+
+; Compilation Hierarchy Node                ; Logic Cells ; LC Registers ; Memory Bits ; M512s ; M4Ks ; M-RAMs ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                  ;
++-------------------------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------+
+; |top                                      ; 381 (1)     ; 78           ; 131072      ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 59   ; 0            ; 303 (1)      ; 0 (0)             ; 78 (0)           ; 240 (0)         ; 0 (0)      ; |top                                                                                 ;
+;    |hb_mem:inst1|                         ; 380 (380)   ; 78           ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 302 (302)    ; 0 (0)             ; 78 (78)          ; 240 (240)       ; 0 (0)      ; |top|hb_mem:inst1                                                                    ;
+;    |lpm_ram_dp0:inst|                     ; 0 (0)       ; 0            ; 131072      ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top|lpm_ram_dp0:inst                                                                ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)       ; 0            ; 131072      ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top|lpm_ram_dp0:inst|altsyncram:altsyncram_component                                ;
+;          |altsyncram_jtk1:auto_generated| ; 0 (0)       ; 0            ; 131072      ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |top|lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_jtk1:auto_generated ;
++-------------------------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------------------------------------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                 ;
++--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; Name                                                                                       ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
++--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+; lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_jtk1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 8192         ; 16           ; 8192         ; 16           ; 131072 ; None ;
++--------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 78    ;
+; Number of registers using Synchronous Clear  ; 27    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 51    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |top|hb_mem:inst1|w_index[2]     ;
+; 3:1                ; 39 bits   ; 78 LEs        ; 39 LEs               ; 39 LEs                 ; Yes        ; |top|hb_mem:inst1|index[1][1]    ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |top|hb_mem:inst1|r_index[1][4]  ;
+; 7:1                ; 12 bits   ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; Yes        ; |top|hb_mem:inst1|r_index[0][11] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Source assignments for lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_jtk1:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                       ;
++---------------------------------+--------------------+------+------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                        ;
++---------------------------------+--------------------+------+------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ram_dp0:inst|altsyncram:altsyncram_component ;
++------------------------------------+-----------------+----------------------------------------+
+; Parameter Name                     ; Value           ; Type                                   ;
++------------------------------------+-----------------+----------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8               ; Untyped                                ;
+; AUTO_CARRY_CHAINS                  ; ON              ; AUTO_CARRY                             ;
+; IGNORE_CARRY_BUFFERS               ; OFF             ; IGNORE_CARRY                           ;
+; AUTO_CASCADE_CHAINS                ; ON              ; AUTO_CASCADE                           ;
+; IGNORE_CASCADE_BUFFERS             ; OFF             ; IGNORE_CASCADE                         ;
+; OPERATION_MODE                     ; DUAL_PORT       ; Untyped                                ;
+; WIDTH_A                            ; 16              ; Integer                                ;
+; WIDTHAD_A                          ; 13              ; Integer                                ;
+; NUMWORDS_A                         ; 8192            ; Integer                                ;
+; OUTDATA_REG_A                      ; UNREGISTERED    ; Untyped                                ;
+; ADDRESS_ACLR_A                     ; NONE            ; Untyped                                ;
+; OUTDATA_ACLR_A                     ; NONE            ; Untyped                                ;
+; WRCONTROL_ACLR_A                   ; NONE            ; Untyped                                ;
+; INDATA_ACLR_A                      ; NONE            ; Untyped                                ;
+; BYTEENA_ACLR_A                     ; NONE            ; Untyped                                ;
+; WIDTH_B                            ; 16              ; Integer                                ;
+; WIDTHAD_B                          ; 13              ; Integer                                ;
+; NUMWORDS_B                         ; 8192            ; Integer                                ;
+; INDATA_REG_B                       ; CLOCK1          ; Untyped                                ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1          ; Untyped                                ;
+; RDCONTROL_REG_B                    ; CLOCK1          ; Untyped                                ;
+; ADDRESS_REG_B                      ; CLOCK0          ; Untyped                                ;
+; OUTDATA_REG_B                      ; CLOCK0          ; Untyped                                ;
+; BYTEENA_REG_B                      ; CLOCK1          ; Untyped                                ;
+; INDATA_ACLR_B                      ; NONE            ; Untyped                                ;
+; WRCONTROL_ACLR_B                   ; NONE            ; Untyped                                ;
+; ADDRESS_ACLR_B                     ; NONE            ; Untyped                                ;
+; OUTDATA_ACLR_B                     ; NONE            ; Untyped                                ;
+; RDCONTROL_ACLR_B                   ; NONE            ; Untyped                                ;
+; BYTEENA_ACLR_B                     ; NONE            ; Untyped                                ;
+; WIDTH_BYTEENA_A                    ; 1               ; Integer                                ;
+; WIDTH_BYTEENA_B                    ; 1               ; Untyped                                ;
+; RAM_BLOCK_TYPE                     ; AUTO            ; Untyped                                ;
+; BYTE_SIZE                          ; 8               ; Untyped                                ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE       ; Untyped                                ;
+; INIT_FILE                          ; UNUSED          ; Untyped                                ;
+; INIT_FILE_LAYOUT                   ; PORT_A          ; Untyped                                ;
+; MAXIMUM_DEPTH                      ; 0               ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL          ; Untyped                                ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL          ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL          ; Untyped                                ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL          ; Untyped                                ;
+; DEVICE_FAMILY                      ; Stratix         ; Untyped                                ;
+; CBXI_PARAMETER                     ; altsyncram_jtk1 ; Untyped                                ;
++------------------------------------+-----------------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Sat Feb 16 15:43:01 2008
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off heartbeat_buffer -c heartbeat_buffer
+Info: Found 1 design units, including 1 entities, in source file lpm_ram_dp0.v
+    Info: Found entity 1: lpm_ram_dp0
+Info: Found 1 design units, including 1 entities, in source file hb_mem.v
+    Info: Found entity 1: hb_mem
+Info: Found 1 design units, including 1 entities, in source file top.bdf
+    Info: Found entity 1: top
+Info: Elaborating entity "top" for the top level hierarchy
+Info: Elaborating entity "hb_mem" for hierarchy "hb_mem:inst1"
+Warning (10230): Verilog HDL assignment warning at hb_mem.v(27): truncated value with size 14 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at hb_mem.v(29): truncated value with size 14 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at hb_mem.v(35): truncated value with size 14 to match size of target (13)
+Warning (10230): Verilog HDL assignment warning at hb_mem.v(37): truncated value with size 14 to match size of target (13)
+Info: Elaborating entity "lpm_ram_dp0" for hierarchy "lpm_ram_dp0:inst"
+Info: Found 1 design units, including 1 entities, in source file c:/altera/quartus60/libraries/megafunctions/altsyncram.tdf
+    Info: Found entity 1: altsyncram
+Info: Elaborating entity "altsyncram" for hierarchy "lpm_ram_dp0:inst|altsyncram:altsyncram_component"
+Info: Elaborated megafunction instantiation "lpm_ram_dp0:inst|altsyncram:altsyncram_component"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_jtk1.tdf
+    Info: Found entity 1: altsyncram_jtk1
+Info: Elaborating entity "altsyncram_jtk1" for hierarchy "lpm_ram_dp0:inst|altsyncram:altsyncram_component|altsyncram_jtk1:auto_generated"
+Info: Implemented 456 device resources after synthesis - the final resource count might be different
+    Info: Implemented 16 input pins
+    Info: Implemented 43 output pins
+    Info: Implemented 381 logic cells
+    Info: Implemented 16 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Processing ended: Sat Feb 16 15:43:07 2008
+    Info: Elapsed time: 00:00:07
+
+

@@ -1,0 +1,103 @@
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+39
+1957
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+count_to_relays
+# storage
+db|relay_logic.(2).cnf
+db|relay_logic.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+count_to_relays.v
+52222cf85beac8491b62bb64cde24da
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+relay_logic:inst|count_to_relays:MAP
+}
+# end
+# entity
+relay_logic
+# storage
+db|relay_logic.(1).cnf
+db|relay_logic.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+relay_logic.v
+d8334979980fa4816b15b8c96826a7
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+relay_logic:inst
+}
+# end
+# entity
+counter
+# storage
+db|relay_logic.(3).cnf
+db|relay_logic.(3).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+counter.v
+946bf37976c463ac6e88689c67138990
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+relay_logic:inst|counter:LEVEL
+}
+# end
+# entity
+test
+# storage
+db|relay_logic.(0).cnf
+db|relay_logic.(0).cnf
+# case_insensitive
+# source_file
+test.bdf
+551294fee4e3e42ab4e3ae073661e67
+24
+# hierarchies {
+|
+}
+# end
+# complete
+

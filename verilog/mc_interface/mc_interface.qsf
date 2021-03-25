@@ -1,0 +1,58 @@
+# Copyright (C) 1991-2006 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		mc_interface_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+set_global_assignment -name FAMILY Stratix
+set_global_assignment -name DEVICE EP1S10F780C6
+set_global_assignment -name TOP_LEVEL_ENTITY top
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "6.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:20:33  FEBRUARY 04, 2008"
+set_global_assignment -name LAST_QUARTUS_VERSION "6.0 SP1"
+set_global_assignment -name VERILOG_FILE ADC_interface.v
+set_global_assignment -name VERILOG_FILE mc_interface.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE mc_interface.vwf
+set_global_assignment -name BDF_FILE top.bdf
+set_global_assignment -name ON_CHIP_BITSTREAM_DECOMPRESSION OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_location_assignment PIN_W5 -to reset
+set_location_assignment PIN_W6 -to start_cali
+set_location_assignment PIN_K17 -to clock
+set_location_assignment PIN_AB2 -to read
+set_location_assignment PIN_AB1 -to done
+set_location_assignment PIN_H27 -to data_out[0]
+set_location_assignment PIN_H28 -to data_out[1]
+set_location_assignment PIN_L23 -to data_out[2]
+set_location_assignment PIN_L24 -to data_out[3]
+set_location_assignment PIN_J25 -to data_out[4]
+set_location_assignment PIN_J26 -to data_out[5]
+set_location_assignment PIN_L20 -to data_out[6]
+set_location_assignment PIN_L19 -to data_out[7]
+set_location_assignment PIN_AD19 -to cal
+set_location_assignment PIN_AF18 -to cs_n
+set_location_assignment PIN_AH21 -to drdy_n
+set_location_assignment PIN_AE20 -to SC[1]
+set_location_assignment PIN_AG21 -to SC[0]
+set_location_assignment PIN_AD21 -to sclk
+set_location_assignment PIN_AG22 -to sdata
+set_location_assignment PIN_AF22 -to sleep_n

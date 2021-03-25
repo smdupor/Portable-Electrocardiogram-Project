@@ -1,0 +1,23 @@
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>ERR</sub_system>
+	<callstack>Stack Trace:
+7c1d020a: Ordinal1971() + 0x4 (MFC71)
+1000e7d2: AFC_EDITOR_TEMPLATE::merge_menus() + 0x97 (GCL_AFC)
+04ba116a: resr_rpw_dll_get_template_classes() + 0x8916 (resr_rpw)
+
+End-trace
+</callstack>
+	<error>Fatal error detected: Access Violation</error>
+	<date>Sat Feb 02 04:13:12 2008</date>
+	<version>Quartus II Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version</version>
+	<full_error>Fatal error detected: Access Violation
+Stack Trace:
+7c1d020a: Ordinal1971() + 0x4 (MFC71)
+1000e7d2: AFC_EDITOR_TEMPLATE::merge_menus() + 0x97 (GCL_AFC)
+04ba116a: resr_rpw_dll_get_template_classes() + 0x8916 (resr_rpw)
+
+End-trace
+
+Quartus II Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version </full_error>
+</internal_error>

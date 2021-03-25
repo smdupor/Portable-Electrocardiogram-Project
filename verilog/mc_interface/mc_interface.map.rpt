@@ -1,0 +1,259 @@
+Analysis & Synthesis report for mc_interface
+Mon Apr 07 15:11:05 2008
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. State Machine - |top|ADC_interface:inst1|state
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                ;
++-----------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Mon Apr 07 15:11:05 2008         ;
+; Quartus II Version          ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name               ; mc_interface                                  ;
+; Top-level Entity Name       ; top                                           ;
+; Family                      ; Stratix                                       ;
+; Total logic elements        ; 62                                            ;
+; Total pins                  ; 39                                            ;
+; Total virtual pins          ; 0                                             ;
+; Total memory bits           ; 0                                             ;
+; DSP block 9-bit elements    ; 0                                             ;
+; Total PLLs                  ; 0                                             ;
+; Total DLLs                  ; 0                                             ;
++-----------------------------+-----------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                             ; Setting            ; Default Value      ;
++--------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                             ; EP1S10F780C6       ;                    ;
+; Top-level entity name                                              ; top                ; mc_interface       ;
+; Family name                                                        ; Stratix            ; Stratix            ;
+; Use smart compilation                                              ; Off                ; Off                ;
+; Restructure Multiplexers                                           ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                ; Off                ; Off                ;
+; Preserve fewer node names                                          ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                          ; Off                ; Off                ;
+; Verilog Version                                                    ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                       ; VHDL93             ; VHDL93             ;
+; State Machine Processing                                           ; Auto               ; Auto               ;
+; Extract Verilog State Machines                                     ; On                 ; On                 ;
+; Extract VHDL State Machines                                        ; On                 ; On                 ;
+; Add Pass-Through Logic to Inferred RAMs                            ; On                 ; On                 ;
+; DSP Block Balancing                                                ; Auto               ; Auto               ;
+; Maximum DSP Block Usage                                            ; Unlimited          ; Unlimited          ;
+; NOT Gate Push-Back                                                 ; On                 ; On                 ;
+; Power-Up Don't Care                                                ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                       ; Off                ; Off                ;
+; Remove Duplicate Registers                                         ; On                 ; On                 ;
+; Ignore CARRY Buffers                                               ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                             ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                              ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                          ; Off                ; Off                ;
+; Ignore LCELL Buffers                                               ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                     ; Off                ; Off                ;
+; Optimization Technique -- Stratix/Stratix GX                       ; Balanced           ; Balanced           ;
+; Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II ; 70                 ; 70                 ;
+; Auto Carry Chains                                                  ; On                 ; On                 ;
+; Auto Open-Drain Pins                                               ; On                 ; On                 ;
+; Remove Duplicate Logic                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                              ; Off                ; Off                ;
+; Perform gate-level register retiming                               ; Off                ; Off                ;
+; Allow register retiming to trade off Tsu/Tco with Fmax             ; On                 ; On                 ;
+; Auto ROM Replacement                                               ; On                 ; On                 ;
+; Auto RAM Replacement                                               ; On                 ; On                 ;
+; Auto DSP Block Replacement                                         ; On                 ; On                 ;
+; Auto Shift Register Replacement                                    ; On                 ; On                 ;
+; Auto Clock Enable Replacement                                      ; On                 ; On                 ;
+; Allow Synchronous Control Signals                                  ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                             ; Off                ; Off                ;
+; Auto RAM Block Balancing                                           ; On                 ; On                 ;
+; Auto Resource Sharing                                              ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                 ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                      ; Off                ; Off                ;
+; Maximum Number of M512 Memory Blocks                               ; Unlimited          ; Unlimited          ;
+; Maximum Number of M4K Memory Blocks                                ; Unlimited          ; Unlimited          ;
+; Maximum Number of M-RAM Memory Blocks                              ; Unlimited          ; Unlimited          ;
+; Ignore translate_off and translate_on Synthesis Directives         ; Off                ; Off                ;
+; Show Parameter Settings Tables in Synthesis Report                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                 ; Off                ; Off                ;
+; Retiming Meta-Stability Register Sequence Length                   ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                       ; Normal compilation ; Normal compilation ;
+; HDL message level                                                  ; Level2             ; Level2             ;
++--------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                   ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------+
+; ADC_interface.v                  ; yes             ; User Verilog HDL File              ; K:/ece480/verilog/mc_interface/ADC_interface.v ;
+; mc_interface.v                   ; yes             ; User Verilog HDL File              ; K:/ece480/verilog/mc_interface/mc_interface.v  ;
+; top.bdf                          ; yes             ; User Block Diagram/Schematic File  ; K:/ece480/verilog/mc_interface/top.bdf         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 62    ;
+;     -- Combinational with no register       ; 24    ;
+;     -- Register only                        ; 1     ;
+;     -- Combinational with a register        ; 37    ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 8     ;
+;     -- 3 input functions                    ; 14    ;
+;     -- 2 input functions                    ; 39    ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;         -- Combinational cells for routing  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 40    ;
+;     -- arithmetic mode                      ; 22    ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 25    ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 38    ;
+; Total logic cells in carry chains           ; 24    ;
+; I/O pins                                    ; 39    ;
+; Maximum fan-out node                        ; reset ;
+; Maximum fan-out                             ; 40    ;
+; Total fan-out                               ; 267   ;
+; Average fan-out                             ; 2.64  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                  ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; M512s ; M4Ks ; M-RAMs ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name      ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------+
+; |top                       ; 62 (0)      ; 38           ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 39   ; 0            ; 24 (0)       ; 1 (0)             ; 37 (0)           ; 24 (0)          ; 0 (0)      ; |top                     ;
+;    |ADC_interface:inst1|   ; 16 (16)     ; 14           ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 1 (1)             ; 13 (13)          ; 0 (0)           ; 0 (0)      ; |top|ADC_interface:inst1 ;
+;    |mc_interface:inst|     ; 46 (46)     ; 24           ; 0           ; 0     ; 0    ; 0      ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 22 (22)      ; 0 (0)             ; 24 (24)          ; 24 (24)         ; 0 (0)      ; |top|mc_interface:inst   ;
++----------------------------+-------------+--------------+-------------+-------+------+--------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+------------+--------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------+
+; State Machine - |top|ADC_interface:inst1|state ;
++-----------+------------------------------------+
+; Name      ; state.001                          ;
++-----------+------------------------------------+
+; state.000 ; 0                                  ;
+; state.001 ; 1                                  ;
++-----------+------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 38    ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 36    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|ADC_interface:inst1|data[10] ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |top|mc_interface:inst|calinum[1] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon Apr 07 15:11:02 2008
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mc_interface -c mc_interface
+Info: Found 1 design units, including 1 entities, in source file ADC_interface.v
+    Info: Found entity 1: ADC_interface
+Info: Found 1 design units, including 1 entities, in source file mc_interface.v
+    Info: Found entity 1: mc_interface
+Info: Found 1 design units, including 1 entities, in source file top.bdf
+    Info: Found entity 1: top
+Info: Elaborating entity "top" for the top level hierarchy
+Info: Elaborating entity "mc_interface" for hierarchy "mc_interface:inst"
+Info: Elaborating entity "ADC_interface" for hierarchy "ADC_interface:inst1"
+Warning: Reduced register "ADC_interface:inst1|SC[1]" with stuck data_in port to stuck value GND
+Warning: Reduced register "ADC_interface:inst1|SC[0]" with stuck data_in port to stuck value GND
+Warning: Reduced register "ADC_interface:inst1|cal" with stuck data_in port to stuck value GND
+Info: Power-up level of register "ADC_interface:inst1|sleep_n" is not specified -- using power-up level of High to minimize register
+Warning: Reduced register "ADC_interface:inst1|sleep_n" with stuck data_in port to stuck value VCC
+Info: State machine "|top|ADC_interface:inst1|state" contains 2 states
+Info: Selected Auto state machine encoding method for state machine "|top|ADC_interface:inst1|state"
+Info: Encoding result for state machine "|top|ADC_interface:inst1|state"
+    Info: Completed encoding using 1 state bits
+        Info: Encoded state bit "ADC_interface:inst1|state.001"
+    Info: State "|top|ADC_interface:inst1|state.000" uses code string "0"
+    Info: State "|top|ADC_interface:inst1|state.001" uses code string "1"
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "cal" stuck at GND
+    Warning: Pin "sleep_n" stuck at VCC
+    Warning: Pin "SC[1]" stuck at GND
+    Warning: Pin "SC[0]" stuck at GND
+Info: Implemented 101 device resources after synthesis - the final resource count might be different
+    Info: Implemented 20 input pins
+    Info: Implemented 19 output pins
+    Info: Implemented 62 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Processing ended: Mon Apr 07 15:11:05 2008
+    Info: Elapsed time: 00:00:04
+
+

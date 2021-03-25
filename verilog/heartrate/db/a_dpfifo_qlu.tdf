@@ -1,0 +1,154 @@
+--a_dpfifo ADD_RAM_OUTPUT_REGISTER="OFF" ALLOW_RWCYCLE_WHEN_FULL="OFF" DEVICE_FAMILY="Stratix" LPM_NUMWORDS=8 LPM_SHOWAHEAD="ON" lpm_width=1 lpm_widthu=3 OVERFLOW_CHECKING="ON" UNDERFLOW_CHECKING="ON" clock data full q rreq sclr wreq CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=70 CYCLONEII_M4K_COMPATIBILITY="ON" LOW_POWER_MODE="AUTO"
+--VERSION_BEGIN 6.0 cbx_altdpram 2006:01:09:10:52:42:SJ cbx_altsyncram 2006:03:30:14:59:04:SJ cbx_cycloneii 2006:02:07:15:19:20:SJ cbx_fifo_common 2006:01:09:11:23:34:SJ cbx_lpm_add_sub 2006:01:09:11:17:20:SJ cbx_lpm_compare 2006:01:09:11:15:40:SJ cbx_lpm_counter 2006:03:23:14:19:24:SJ cbx_lpm_decode 2006:01:09:11:16:44:SJ cbx_lpm_mux 2006:01:09:11:16:16:SJ cbx_mgl 2006:05:17:10:06:16:SJ cbx_scfifo 2006:01:09:11:24:10:SJ cbx_stratix 2006:05:17:09:28:32:SJ cbx_stratixii 2006:03:03:09:35:36:SJ cbx_util_mgl 2006:01:09:10:46:36:SJ  VERSION_END
+
+
+--  Copyright (C) 1991-2006 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION altsyncram_gs71 (address_a[2..0], address_b[2..0], clock0, data_a[0..0], wren_a)
+RETURNS ( q_b[0..0]);
+FUNCTION cntr_n08 (clock, cnt_en, sclr)
+RETURNS ( q[1..0]);
+FUNCTION cntr_6v6 (clock, cnt_en, sclr, updown)
+RETURNS ( q[2..0]);
+FUNCTION cntr_o08 (clock, cnt_en, sclr)
+RETURNS ( q[2..0]);
+
+--synthesis_resources = lut 21 ram_bits (auto) 8 
+SUBDESIGN a_dpfifo_qlu
+( 
+	clock	:	input;
+	data[0..0]	:	input;
+	full	:	output;
+	q[0..0]	:	output;
+	rreq	:	input;
+	sclr	:	input;
+	wreq	:	input;
+) 
+VARIABLE 
+	FIFOram : altsyncram_gs71;
+	empty_dff : dffe;
+	full_dff : dffe;
+	low_addressa[2..0] : dffe;
+	rd_ptr_lsb : dffe;
+	usedw_is_0_dff : dffe;
+	usedw_is_1_dff : dffe;
+	usedw_is_2_dff : dffe;
+	wrreq_delaya[1..0] : dffe;
+	almost_full_comparer_aeb_int	:	WIRE;
+	almost_full_comparer_aeb	:	WIRE;
+	almost_full_comparer_dataa[2..0]	:	WIRE;
+	almost_full_comparer_datab[2..0]	:	WIRE;
+	three_comparison_aeb_int	:	WIRE;
+	three_comparison_aeb	:	WIRE;
+	three_comparison_dataa[2..0]	:	WIRE;
+	three_comparison_datab[2..0]	:	WIRE;
+	rd_ptr_msb : cntr_n08;
+	usedw_counter : cntr_6v6;
+	wr_ptr : cntr_o08;
+	aclr	: NODE;
+	asynch_read_counter_enable	: WIRE;
+	empty_out	: WIRE;
+	full_out	: WIRE;
+	pulse_ram_output	: WIRE;
+	ram_read_address[2..0]	: WIRE;
+	rd_ptr[2..0]	: WIRE;
+	usedw_is_0	: WIRE;
+	usedw_is_1	: WIRE;
+	usedw_is_2	: WIRE;
+	usedw_will_be_0	: WIRE;
+	usedw_will_be_1	: WIRE;
+	usedw_will_be_2	: WIRE;
+	valid_rreq	: WIRE;
+	valid_wreq	: WIRE;
+	wait_state	: WIRE;
+
+BEGIN 
+	FIFOram.address_a[] = wr_ptr.q[];
+	FIFOram.address_b[] = ram_read_address[];
+	FIFOram.clock0 = clock;
+	FIFOram.data_a[] = data[];
+	FIFOram.wren_a = valid_wreq;
+	empty_dff.CLK = clock;
+	empty_dff.CLRN = (! aclr);
+	empty_dff.D = ((! (usedw_will_be_0 # wait_state)) & (! sclr));
+	full_dff.CLK = clock;
+	full_dff.CLRN = (! aclr);
+	full_dff.D = ((! sclr) & (((valid_wreq & (! valid_rreq)) & almost_full_comparer_aeb) # (full_dff.Q & (! (valid_wreq $ valid_rreq)))));
+	low_addressa[].CLK = clock;
+	low_addressa[].CLRN = (! aclr);
+	low_addressa[].D = ((! sclr) & ((asynch_read_counter_enable & rd_ptr[]) # ((! asynch_read_counter_enable) & low_addressa[].Q)));
+	rd_ptr_lsb.CLK = clock;
+	rd_ptr_lsb.CLRN = (! aclr);
+	rd_ptr_lsb.D = ((! rd_ptr_lsb.Q) & (! sclr));
+	rd_ptr_lsb.ENA = (asynch_read_counter_enable # sclr);
+	usedw_is_0_dff.CLK = clock;
+	usedw_is_0_dff.CLRN = (! aclr);
+	usedw_is_0_dff.D = (! usedw_will_be_0);
+	usedw_is_1_dff.CLK = clock;
+	usedw_is_1_dff.CLRN = (! aclr);
+	usedw_is_1_dff.D = usedw_will_be_1;
+	usedw_is_2_dff.CLK = clock;
+	usedw_is_2_dff.CLRN = (! aclr);
+	usedw_is_2_dff.D = usedw_will_be_2;
+	wrreq_delaya[].CLK = clock;
+	wrreq_delaya[].CLRN = (! aclr);
+	wrreq_delaya[].D = ( ((! sclr) & valid_wreq), ((! sclr) & wrreq_delaya[1].Q));
+	IF (almost_full_comparer_dataa[] == almost_full_comparer_datab[]) THEN
+		almost_full_comparer_aeb_int = VCC;
+	ELSE
+		almost_full_comparer_aeb_int = GND;
+	END IF;
+	almost_full_comparer_aeb = almost_full_comparer_aeb_int;
+	almost_full_comparer_dataa[] = B"111";
+	almost_full_comparer_datab[] = usedw_counter.q[];
+	IF (three_comparison_dataa[] == three_comparison_datab[]) THEN
+		three_comparison_aeb_int = VCC;
+	ELSE
+		three_comparison_aeb_int = GND;
+	END IF;
+	three_comparison_aeb = three_comparison_aeb_int;
+	three_comparison_dataa[] = usedw_counter.q[];
+	three_comparison_datab[] = B"011";
+	rd_ptr_msb.clock = clock;
+	rd_ptr_msb.cnt_en = (asynch_read_counter_enable & (! rd_ptr_lsb.Q));
+	rd_ptr_msb.sclr = sclr;
+	usedw_counter.clock = clock;
+	usedw_counter.cnt_en = (valid_wreq $ valid_rreq);
+	usedw_counter.sclr = sclr;
+	usedw_counter.updown = valid_wreq;
+	wr_ptr.clock = clock;
+	wr_ptr.cnt_en = valid_wreq;
+	wr_ptr.sclr = sclr;
+	aclr = GND;
+	asynch_read_counter_enable = pulse_ram_output;
+	empty_out = (! empty_dff.Q);
+	full = full_out;
+	full_out = full_dff.Q;
+	pulse_ram_output = valid_rreq;
+	q[] = FIFOram.q_b[];
+	ram_read_address[] = (((! asynch_read_counter_enable) & low_addressa[].Q) # (asynch_read_counter_enable & rd_ptr[]));
+	rd_ptr[] = ( rd_ptr_msb.q[], (! rd_ptr_lsb.Q));
+	usedw_is_0 = (! usedw_is_0_dff.Q);
+	usedw_is_1 = usedw_is_1_dff.Q;
+	usedw_is_2 = usedw_is_2_dff.Q;
+	usedw_will_be_0 = (! ((! sclr) & (! (((usedw_is_1 & valid_rreq) & (! valid_wreq)) # (usedw_is_0 & (! (valid_wreq $ valid_rreq)))))));
+	usedw_will_be_1 = ((! sclr) & (((usedw_is_1 & (! (valid_wreq $ valid_rreq))) # ((usedw_is_0 & valid_wreq) & (! valid_rreq))) # ((usedw_is_2 & valid_rreq) & (! valid_wreq))));
+	usedw_will_be_2 = ((! sclr) & (((usedw_is_2_dff.Q & (! (valid_wreq $ valid_rreq))) # ((usedw_is_1 & valid_wreq) & (! valid_rreq))) # ((three_comparison_aeb & valid_rreq) & (! valid_wreq))));
+	valid_rreq = (rreq & (! empty_out));
+	valid_wreq = (wreq & (! full_out));
+	wait_state = (usedw_will_be_1 & valid_wreq);
+END;
+--VALID FILE

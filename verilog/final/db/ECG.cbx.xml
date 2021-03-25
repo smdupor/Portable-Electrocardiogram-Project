@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="ECG">
+		<CBX_INST_ENTRY INSTANCE_NAME="|ECG|lpm_fifo0:inst|scfifo:scfifo_component" CBX_FILE_NAME="scfifo_76v.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ECG|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_76v:auto_generated|a_dpfifo_qtu:dpfifo|altsyncram_gc81:FIFOram|altsyncram:ram_block1a0" CBX_FILE_NAME="altsyncram_9403.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|ECG|lpm_ram_dp0:inst3|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_p0l1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

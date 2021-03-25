@@ -1,0 +1,100 @@
+Flow report for heartbeat_buffer
+Sat Feb 16 15:43:40 2008
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Flow Summary                                                             ;
++--------------------------+-----------------------------------------------+
+; Flow Status              ; Successful - Sat Feb 16 15:43:40 2008         ;
+; Quartus II Version       ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name            ; heartbeat_buffer                              ;
+; Top-level Entity Name    ; top                                           ;
+; Family                   ; Stratix                                       ;
+; Device                   ; EP1S10F780C6                                  ;
+; Timing Models            ; Final                                         ;
+; Met timing requirements  ; Yes                                           ;
+; Total logic elements     ; 381 / 10,570 ( 4 % )                          ;
+; Total pins               ; 59 / 427 ( 14 % )                             ;
+; Total virtual pins       ; 0                                             ;
+; Total memory bits        ; 131,072 / 920,448 ( 14 % )                    ;
+; DSP block 9-bit elements ; 0 / 48 ( 0 % )                                ;
+; Total PLLs               ; 0 / 6 ( 0 % )                                 ;
+; Total DLLs               ; 0 / 2 ( 0 % )                                 ;
++--------------------------+-----------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/16/2008 15:43:01 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; heartbeat_buffer    ;
++-------------------+---------------------+
+
+
++------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                       ;
++------------------+-------+------------------+-------------+------------+
+; Assignment Name  ; Value ; Default Value    ; Entity Name ; Section Id ;
++------------------+-------+------------------+-------------+------------+
+; TOP_LEVEL_ENTITY ; top   ; heartbeat_buffer ; --          ; --         ;
++------------------+-------+------------------+-------------+------------+
+
+
++-------------------------------------+
+; Flow Elapsed Time                   ;
++----------------------+--------------+
+; Module Name          ; Elapsed Time ;
++----------------------+--------------+
+; Analysis & Synthesis ; 00:00:07     ;
+; Fitter               ; 00:00:17     ;
+; Assembler            ; 00:00:06     ;
+; Timing Analyzer      ; 00:00:03     ;
+; Total                ; 00:00:33     ;
++----------------------+--------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off heartbeat_buffer -c heartbeat_buffer
+quartus_fit --read_settings_files=off --write_settings_files=off heartbeat_buffer -c heartbeat_buffer
+quartus_asm --read_settings_files=off --write_settings_files=off heartbeat_buffer -c heartbeat_buffer
+quartus_tan --read_settings_files=off --write_settings_files=off heartbeat_buffer -c heartbeat_buffer --timing_analysis_only
+
+
+

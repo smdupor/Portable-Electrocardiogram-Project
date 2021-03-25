@@ -1,0 +1,14 @@
+Fitter Status : Successful - Mon Feb 04 11:54:09 2008
+Quartus II Version : 6.0 Build 202 06/20/2006 SP 1 SJ Full Version
+Revision Name : ECG
+Top-level Entity Name : ECG
+Family : Stratix
+Device : EP1S10F780C6
+Timing Models : Final
+Total logic elements : 569 / 10,570 ( 5 % )
+Total pins : 39 / 427 ( 9 % )
+Total virtual pins : 0
+Total memory bits : 212,992 / 920,448 ( 23 % )
+DSP block 9-bit elements : 0 / 48 ( 0 % )
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

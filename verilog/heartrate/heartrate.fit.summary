@@ -1,0 +1,14 @@
+Fitter Status : Successful - Sat Feb 16 15:54:52 2008
+Quartus II Version : 6.0 Build 202 06/20/2006 SP 1 SJ Full Version
+Revision Name : heartrate
+Top-level Entity Name : top
+Family : Stratix
+Device : EP1S10F780C6
+Timing Models : Final
+Total logic elements : 116 / 10,570 ( 1 % )
+Total pins : 11 / 427 ( 3 % )
+Total virtual pins : 0
+Total memory bits : 8,192 / 920,448 ( < 1 % )
+DSP block 9-bit elements : 0 / 48 ( 0 % )
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 2 ( 0 % )

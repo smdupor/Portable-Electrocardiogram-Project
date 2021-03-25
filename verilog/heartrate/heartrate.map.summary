@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Sat Feb 16 15:54:40 2008
+Quartus II Version : 6.0 Build 202 06/20/2006 SP 1 SJ Full Version
+Revision Name : heartrate
+Top-level Entity Name : top
+Family : Stratix
+Total logic elements : 116
+Total pins : 11
+Total virtual pins : 0
+Total memory bits : 8,192
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

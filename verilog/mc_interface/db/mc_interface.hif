@@ -1,0 +1,81 @@
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+39
+1957
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Partition --
+-- End Partition --
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+mc_interface
+# storage
+db|mc_interface.(1).cnf
+db|mc_interface.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+mc_interface.v
+ced8497eea77362280a014bfbdbb44b
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+mc_interface:inst
+}
+# end
+# entity
+ADC_interface
+# storage
+db|mc_interface.(2).cnf
+db|mc_interface.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_sensitive
+# source_file
+ADC_interface.v
+d55cfbd3b8116fecf0d97bb9d017a4ce
+7
+# internal_option {
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+ADC_interface:inst1
+}
+# end
+# entity
+top
+# storage
+db|mc_interface.(0).cnf
+db|mc_interface.(0).cnf
+# case_insensitive
+# source_file
+top.bdf
+df3b11f83135ae4e7456cedfb2db91
+24
+# hierarchies {
+|
+}
+# end
+# complete
+

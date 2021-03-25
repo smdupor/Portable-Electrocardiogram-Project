@@ -1,0 +1,297 @@
+Simulator report for heartrate
+Mon Feb 04 02:26:32 2008
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|altsyncram_gs71:FIFOram|ALTSYNCRAM
+  6. Coverage Summary
+  7. Complete 1/0-Value Coverage
+  8. Missing 1-Value Coverage
+  9. Missing 0-Value Coverage
+ 10. Simulator INI Usage
+ 11. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 72 nodes     ;
+; Simulation Coverage         ;      56.70 % ;
+; Total Number of Transitions ; 1134         ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Stratix      ;
+; Device                      ; EP1S10F780C6 ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Glitch Filtering                                                                           ; Off        ; Off           ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|altsyncram_gs71:FIFOram|ALTSYNCRAM ;
++------------------------------------------------------------------------------------------------------------------------------+
+Memory report data cannot be output to ASCII.
+Please use Quartus II to view the memory report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      56.70 % ;
+; Total nodes checked                                 ; 72           ;
+; Total output ports checked                          ; 97           ;
+; Total output ports with complete 1/0-value coverage ; 55           ;
+; Total output ports with no 1/0-value coverage       ; 35           ;
+; Total output ports with no 1-value coverage         ; 38           ;
+; Total output ports with no 0-value coverage         ; 39           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                                  ; Output Port Name                                                                                                                            ; Output Port Type ;
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+------------------+
+; |top|heartrate:inst1|rate[1]                                                                                               ; |top|heartrate:inst1|rate[1]                                                                                                                ; regout           ;
+; |top|heartrate:inst1|rate[0]                                                                                               ; |top|heartrate:inst1|rate[0]                                                                                                                ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~368                            ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~368                                             ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|safe_q[0] ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|counter_cella0~COUT        ; cout0            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|safe_q[0] ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|counter_cella0~COUTCOUT1   ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|safe_q[1] ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|counter_cella1~COUT        ; cout0            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|safe_q[1] ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|counter_cella1~COUTCOUT1_2 ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~369                            ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~369                                             ; combout          ;
+; |top|heartrate:inst1|Add0~135                                                                                              ; |top|heartrate:inst1|Add0~135                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add0~137                                                                                              ; |top|heartrate:inst1|Add0~137                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add0~137                                                                                              ; |top|heartrate:inst1|Add0~138                                                                                                               ; cout0            ;
+; |top|heartrate:inst1|Add0~137                                                                                              ; |top|heartrate:inst1|Add0~138COUT1                                                                                                          ; cout1            ;
+; |top|heartrate:inst1|Add1~225                                                                                              ; |top|heartrate:inst1|Add1~225                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add0~139                                                                                              ; |top|heartrate:inst1|Add0~139                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add0~139                                                                                              ; |top|heartrate:inst1|Add0~140                                                                                                               ; cout0            ;
+; |top|heartrate:inst1|Add0~139                                                                                              ; |top|heartrate:inst1|Add0~140COUT1_148                                                                                                      ; cout1            ;
+; |top|heartrate:inst1|Add1~227                                                                                              ; |top|heartrate:inst1|Add1~227                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add1~227                                                                                              ; |top|heartrate:inst1|Add1~228                                                                                                               ; cout0            ;
+; |top|heartrate:inst1|Add1~227                                                                                              ; |top|heartrate:inst1|Add1~228COUT1_233                                                                                                      ; cout1            ;
+; |top|heartrate:inst1|Add0~141                                                                                              ; |top|heartrate:inst1|Add0~141                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add0~141                                                                                              ; |top|heartrate:inst1|Add0~142                                                                                                               ; cout0            ;
+; |top|heartrate:inst1|Add0~141                                                                                              ; |top|heartrate:inst1|Add0~142COUT1_147                                                                                                      ; cout1            ;
+; |top|heartrate:inst1|Add1~229                                                                                              ; |top|heartrate:inst1|Add1~229                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add1~229                                                                                              ; |top|heartrate:inst1|Add1~230                                                                                                               ; cout0            ;
+; |top|heartrate:inst1|Add1~229                                                                                              ; |top|heartrate:inst1|Add1~230COUT1_232                                                                                                      ; cout1            ;
+; |top|heartrate:inst1|Add0~143                                                                                              ; |top|heartrate:inst1|Add0~143                                                                                                               ; combout          ;
+; |top|heartrate:inst1|Add0~143                                                                                              ; |top|heartrate:inst1|Add0~144                                                                                                               ; cout0            ;
+; |top|heartrate:inst1|Add0~143                                                                                              ; |top|heartrate:inst1|Add0~144COUT1_146                                                                                                      ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|_~7       ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_6v6:usedw_counter|_~7                        ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|valid_wreq                       ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|valid_wreq                                        ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|altsyncram_gs71:FIFOram|q_b[0]   ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|altsyncram_gs71:FIFOram|q_b[0]                    ; portbdataout0    ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|usedw_will_be_1~172              ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|usedw_will_be_1~172                               ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~7                              ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~7                                               ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[0]        ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[0]                         ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[0]        ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|counter_cella0~COUT               ; cout0            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[0]        ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|counter_cella0~COUTCOUT1          ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[1]        ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[1]                         ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[1]        ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|counter_cella1~COUT               ; cout0            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[1]        ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|counter_cella1~COUTCOUT1_2        ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[2]        ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_o08:wr_ptr|safe_q[2]                         ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|rd_ptr_lsb                       ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|rd_ptr_lsb                                        ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|ram_read_address[0]~130          ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|ram_read_address[0]~130                           ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_n08:rd_ptr_msb|safe_q[0]    ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_n08:rd_ptr_msb|counter_cella0~COUT           ; cout0            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_n08:rd_ptr_msb|safe_q[0]    ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|cntr_n08:rd_ptr_msb|counter_cella0~COUTCOUT1      ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|ram_read_address[1]~131          ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|ram_read_address[1]~131                           ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|ram_read_address[2]~132          ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|ram_read_address[2]~132                           ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~58                             ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~58                                              ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|rd_ptr_lsb~2                     ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|rd_ptr_lsb~2                                      ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~14                             ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~14                                              ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~6                              ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~6                                               ; combout          ;
+; |top|clock                                                                                                                 ; |top|clock                                                                                                                                  ; combout          ;
+; |top|hb                                                                                                                    ; |top|hb                                                                                                                                     ; combout          ;
+; |top|full                                                                                                                  ; |top|full                                                                                                                                   ; padio            ;
+; |top|rate[1]                                                                                                               ; |top|rate[1]                                                                                                                                ; padio            ;
+; |top|rate[0]                                                                                                               ; |top|rate[0]                                                                                                                                ; padio            ;
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                    ; Output Port Name                                                                                             ; Output Port Type ;
++--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------+
+; |top|heartrate:inst1|rate[7]                                                                                 ; |top|heartrate:inst1|rate[7]                                                                                 ; regout           ;
+; |top|heartrate:inst1|rate[6]                                                                                 ; |top|heartrate:inst1|rate[6]                                                                                 ; regout           ;
+; |top|heartrate:inst1|rate[5]                                                                                 ; |top|heartrate:inst1|rate[5]                                                                                 ; regout           ;
+; |top|heartrate:inst1|rate[4]                                                                                 ; |top|heartrate:inst1|rate[4]                                                                                 ; regout           ;
+; |top|heartrate:inst1|rate[3]                                                                                 ; |top|heartrate:inst1|rate[3]                                                                                 ; regout           ;
+; |top|heartrate:inst1|rate[2]                                                                                 ; |top|heartrate:inst1|rate[2]                                                                                 ; regout           ;
+; |top|heartrate:inst1|Add1~215                                                                                ; |top|heartrate:inst1|Add1~215                                                                                ; combout          ;
+; |top|heartrate:inst1|Add0~129                                                                                ; |top|heartrate:inst1|Add0~129                                                                                ; combout          ;
+; |top|heartrate:inst1|Add1~217                                                                                ; |top|heartrate:inst1|Add1~217                                                                                ; combout          ;
+; |top|heartrate:inst1|Add1~217                                                                                ; |top|heartrate:inst1|Add1~218                                                                                ; cout0            ;
+; |top|heartrate:inst1|Add1~217                                                                                ; |top|heartrate:inst1|Add1~218COUT1_236                                                                       ; cout1            ;
+; |top|heartrate:inst1|Add0~131                                                                                ; |top|heartrate:inst1|Add0~131                                                                                ; combout          ;
+; |top|heartrate:inst1|Add0~131                                                                                ; |top|heartrate:inst1|Add0~132                                                                                ; cout0            ;
+; |top|heartrate:inst1|Add0~131                                                                                ; |top|heartrate:inst1|Add0~132COUT1_150                                                                       ; cout1            ;
+; |top|heartrate:inst1|Add1~219                                                                                ; |top|heartrate:inst1|Add1~219                                                                                ; combout          ;
+; |top|heartrate:inst1|Add1~219                                                                                ; |top|heartrate:inst1|Add1~220                                                                                ; cout0            ;
+; |top|heartrate:inst1|Add1~219                                                                                ; |top|heartrate:inst1|Add1~220COUT1_235                                                                       ; cout1            ;
+; |top|heartrate:inst1|Add0~133                                                                                ; |top|heartrate:inst1|Add0~133                                                                                ; combout          ;
+; |top|heartrate:inst1|Add0~133                                                                                ; |top|heartrate:inst1|Add0~134                                                                                ; cout0            ;
+; |top|heartrate:inst1|Add0~133                                                                                ; |top|heartrate:inst1|Add0~134COUT1_149                                                                       ; cout1            ;
+; |top|heartrate:inst1|Add1~221                                                                                ; |top|heartrate:inst1|Add1~221                                                                                ; combout          ;
+; |top|heartrate:inst1|Add1~221                                                                                ; |top|heartrate:inst1|Add1~222                                                                                ; cout             ;
+; |top|heartrate:inst1|Add0~135                                                                                ; |top|heartrate:inst1|Add0~136                                                                                ; cout             ;
+; |top|heartrate:inst1|Add1~223                                                                                ; |top|heartrate:inst1|Add1~223                                                                                ; combout          ;
+; |top|heartrate:inst1|Add1~223                                                                                ; |top|heartrate:inst1|Add1~224                                                                                ; cout0            ;
+; |top|heartrate:inst1|Add1~223                                                                                ; |top|heartrate:inst1|Add1~224COUT1                                                                           ; cout1            ;
+; |top|heartrate:inst1|Add1~225                                                                                ; |top|heartrate:inst1|Add1~226                                                                                ; cout0            ;
+; |top|heartrate:inst1|Add1~225                                                                                ; |top|heartrate:inst1|Add1~226COUT1_234                                                                       ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|empty_dff~53       ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|empty_dff~53       ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|usedw_will_be_0~39 ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|usedw_will_be_0~39 ; combout          ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~62               ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~62               ; combout          ;
+; |top|reset                                                                                                   ; |top|reset                                                                                                   ; combout          ;
+; |top|rate[7]                                                                                                 ; |top|rate[7]                                                                                                 ; padio            ;
+; |top|rate[6]                                                                                                 ; |top|rate[6]                                                                                                 ; padio            ;
+; |top|rate[5]                                                                                                 ; |top|rate[5]                                                                                                 ; padio            ;
+; |top|rate[4]                                                                                                 ; |top|rate[4]                                                                                                 ; padio            ;
+; |top|rate[3]                                                                                                 ; |top|rate[3]                                                                                                 ; padio            ;
+; |top|rate[2]                                                                                                 ; |top|rate[2]                                                                                                 ; padio            ;
++--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                                                                                               ;
++----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                                                ; Output Port Name                                                                                         ; Output Port Type ;
++----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+
+; |top|heartrate:inst1|rate[7]                                                                             ; |top|heartrate:inst1|rate[7]                                                                             ; regout           ;
+; |top|heartrate:inst1|rate[6]                                                                             ; |top|heartrate:inst1|rate[6]                                                                             ; regout           ;
+; |top|heartrate:inst1|rate[5]                                                                             ; |top|heartrate:inst1|rate[5]                                                                             ; regout           ;
+; |top|heartrate:inst1|rate[4]                                                                             ; |top|heartrate:inst1|rate[4]                                                                             ; regout           ;
+; |top|heartrate:inst1|rate[3]                                                                             ; |top|heartrate:inst1|rate[3]                                                                             ; regout           ;
+; |top|heartrate:inst1|rate[2]                                                                             ; |top|heartrate:inst1|rate[2]                                                                             ; regout           ;
+; |top|heartrate:inst1|ren                                                                                 ; |top|heartrate:inst1|ren                                                                                 ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|empty_dff      ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|empty_dff      ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|valid_rreq~20  ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|valid_rreq~20  ; combout          ;
+; |top|heartrate:inst1|Add1~215                                                                            ; |top|heartrate:inst1|Add1~215                                                                            ; combout          ;
+; |top|heartrate:inst1|Add0~129                                                                            ; |top|heartrate:inst1|Add0~129                                                                            ; combout          ;
+; |top|heartrate:inst1|Add1~217                                                                            ; |top|heartrate:inst1|Add1~217                                                                            ; combout          ;
+; |top|heartrate:inst1|Add1~217                                                                            ; |top|heartrate:inst1|Add1~218                                                                            ; cout0            ;
+; |top|heartrate:inst1|Add1~217                                                                            ; |top|heartrate:inst1|Add1~218COUT1_236                                                                   ; cout1            ;
+; |top|heartrate:inst1|Add0~131                                                                            ; |top|heartrate:inst1|Add0~131                                                                            ; combout          ;
+; |top|heartrate:inst1|Add0~131                                                                            ; |top|heartrate:inst1|Add0~132                                                                            ; cout0            ;
+; |top|heartrate:inst1|Add0~131                                                                            ; |top|heartrate:inst1|Add0~132COUT1_150                                                                   ; cout1            ;
+; |top|heartrate:inst1|Add1~219                                                                            ; |top|heartrate:inst1|Add1~219                                                                            ; combout          ;
+; |top|heartrate:inst1|Add1~219                                                                            ; |top|heartrate:inst1|Add1~220                                                                            ; cout0            ;
+; |top|heartrate:inst1|Add1~219                                                                            ; |top|heartrate:inst1|Add1~220COUT1_235                                                                   ; cout1            ;
+; |top|heartrate:inst1|Add0~133                                                                            ; |top|heartrate:inst1|Add0~133                                                                            ; combout          ;
+; |top|heartrate:inst1|Add0~133                                                                            ; |top|heartrate:inst1|Add0~134                                                                            ; cout0            ;
+; |top|heartrate:inst1|Add0~133                                                                            ; |top|heartrate:inst1|Add0~134COUT1_149                                                                   ; cout1            ;
+; |top|heartrate:inst1|Add1~221                                                                            ; |top|heartrate:inst1|Add1~221                                                                            ; combout          ;
+; |top|heartrate:inst1|Add1~221                                                                            ; |top|heartrate:inst1|Add1~222                                                                            ; cout             ;
+; |top|heartrate:inst1|Add0~135                                                                            ; |top|heartrate:inst1|Add0~136                                                                            ; cout             ;
+; |top|heartrate:inst1|Add1~223                                                                            ; |top|heartrate:inst1|Add1~223                                                                            ; combout          ;
+; |top|heartrate:inst1|Add1~223                                                                            ; |top|heartrate:inst1|Add1~224                                                                            ; cout0            ;
+; |top|heartrate:inst1|Add1~223                                                                            ; |top|heartrate:inst1|Add1~224COUT1                                                                       ; cout1            ;
+; |top|heartrate:inst1|Add1~225                                                                            ; |top|heartrate:inst1|Add1~226                                                                            ; cout0            ;
+; |top|heartrate:inst1|Add1~225                                                                            ; |top|heartrate:inst1|Add1~226COUT1_234                                                                   ; cout1            ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|usedw_is_0_dff ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|usedw_is_0_dff ; regout           ;
+; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~62           ; |top|lpm_fifo0:inst|scfifo:scfifo_component|scfifo_7uu:auto_generated|a_dpfifo_qlu:dpfifo|_~62           ; combout          ;
+; |top|rate[7]                                                                                             ; |top|rate[7]                                                                                             ; padio            ;
+; |top|rate[6]                                                                                             ; |top|rate[6]                                                                                             ; padio            ;
+; |top|rate[5]                                                                                             ; |top|rate[5]                                                                                             ; padio            ;
+; |top|rate[4]                                                                                             ; |top|rate[4]                                                                                             ; padio            ;
+; |top|rate[3]                                                                                             ; |top|rate[3]                                                                                             ; padio            ;
+; |top|rate[2]                                                                                             ; |top|rate[2]                                                                                             ; padio            ;
++----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon Feb 04 02:26:30 2008
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off heartrate -c heartrate
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      56.70 %
+Info: Number of transitions in simulation is 1134
+Info: Vector file heartrate.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Mon Feb 04 02:26:32 2008
+    Info: Elapsed time: 00:00:03
+
+

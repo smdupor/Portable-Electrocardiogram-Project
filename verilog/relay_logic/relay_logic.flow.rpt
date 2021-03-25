@@ -1,0 +1,100 @@
+Flow report for relay_logic
+Fri Feb 22 21:21:17 2008
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow Log
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------+
+; Flow Summary                                                             ;
++--------------------------+-----------------------------------------------+
+; Flow Status              ; Successful - Fri Feb 22 21:21:16 2008         ;
+; Quartus II Version       ; 6.0 Build 202 06/20/2006 SP 1 SJ Full Version ;
+; Revision Name            ; relay_logic                                   ;
+; Top-level Entity Name    ; test                                          ;
+; Family                   ; Stratix                                       ;
+; Device                   ; EP1S10F780C6                                  ;
+; Timing Models            ; Final                                         ;
+; Met timing requirements  ; Yes                                           ;
+; Total logic elements     ; 23 / 10,570 ( < 1 % )                         ;
+; Total pins               ; 17 / 427 ( 4 % )                              ;
+; Total virtual pins       ; 0                                             ;
+; Total memory bits        ; 0 / 920,448 ( 0 % )                           ;
+; DSP block 9-bit elements ; 0 / 48 ( 0 % )                                ;
+; Total PLLs               ; 0 / 6 ( 0 % )                                 ;
+; Total DLLs               ; 0 / 2 ( 0 % )                                 ;
++--------------------------+-----------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 02/22/2008 21:20:48 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; relay_logic         ;
++-------------------+---------------------+
+
+
++---------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                    ;
++------------------+-------+---------------+-------------+------------+
+; Assignment Name  ; Value ; Default Value ; Entity Name ; Section Id ;
++------------------+-------+---------------+-------------+------------+
+; TOP_LEVEL_ENTITY ; test  ; relay_logic   ; --          ; --         ;
++------------------+-------+---------------+-------------+------------+
+
+
++-------------------------------------+
+; Flow Elapsed Time                   ;
++----------------------+--------------+
+; Module Name          ; Elapsed Time ;
++----------------------+--------------+
+; Analysis & Synthesis ; 00:00:05     ;
+; Fitter               ; 00:00:11     ;
+; Assembler            ; 00:00:05     ;
+; Timing Analyzer      ; 00:00:02     ;
+; Total                ; 00:00:23     ;
++----------------------+--------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off relay_logic -c relay_logic
+quartus_fit --read_settings_files=off --write_settings_files=off relay_logic -c relay_logic
+quartus_asm --read_settings_files=off --write_settings_files=off relay_logic -c relay_logic
+quartus_tan --read_settings_files=off --write_settings_files=off relay_logic -c relay_logic --timing_analysis_only
+
+
+

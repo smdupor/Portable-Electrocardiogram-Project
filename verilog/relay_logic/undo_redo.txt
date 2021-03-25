@@ -1,0 +1,26 @@
+GED
+
+	Undo Commands
+	     1.	Move
+	     2.	Move
+	     3.	Move
+	     4.	Move
+	     5.	Move
+	     6.	Move
+	     7.	Delete
+	     8.	Update Symbol or Block
+	     9.	Move
+	    10.	Move
+	    11.	Delete
+	    12.	Delete
+	    13.	Update Symbol or Block
+	    14.	Properties
+	    15.	Properties
+
+
+RPW
+
+	Undo Commands
+	     1.	||Compilation Report||Flow Summary
+
+

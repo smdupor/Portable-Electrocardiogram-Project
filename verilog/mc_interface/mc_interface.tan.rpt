@@ -1,0 +1,697 @@
+Timing Analyzer report for mc_interface
+Mon Apr 07 15:11:35 2008
+Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clock'
+  6. Clock Setup: 'sclk'
+  7. tsu
+  8. tco
+  9. tpd
+ 10. th
+ 11. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                   ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------------------+------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                        ; To                           ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------------------+------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 6.255 ns                                       ; reset                       ; mc_interface:inst|cali[19]   ; --         ; clock    ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 12.982 ns                                      ; ADC_interface:inst1|data[3] ; data_out[3]                  ; sclk       ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 12.250 ns                                      ; read                        ; data_out[1]                  ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.014 ns                                       ; sdata                       ; ADC_interface:inst1|data[0]  ; --         ; sclk     ; 0            ;
+; Clock Setup: 'clock'         ; N/A   ; None          ; 242.66 MHz ( period = 4.121 ns )               ; mc_interface:inst|cali[19]  ; mc_interface:inst|calinum[3] ; clock      ; clock    ; 0            ;
+; Clock Setup: 'sclk'          ; N/A   ; None          ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[1] ; ADC_interface:inst1|data[2]  ; sclk       ; sclk     ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                             ;                              ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+-----------------------------+------------------------------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1S10F780C6       ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same As Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                         ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clock           ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; sclk            ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clock'                                                                                                                                                                                                                                                    ;
++-----------------------------------------+-----------------------------------------------------+------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                         ; To                           ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 242.66 MHz ( period = 4.121 ns )                    ; mc_interface:inst|cali[19]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.927 ns                ;
+; N/A                                     ; 246.37 MHz ( period = 4.059 ns )                    ; mc_interface:inst|cali[19]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.865 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[10]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[11]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[12]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[13]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[14]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 3.829 ns                ;
+; N/A                                     ; 249.56 MHz ( period = 4.007 ns )                    ; mc_interface:inst|cali[7]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.821 ns                ;
+; N/A                                     ; 249.81 MHz ( period = 4.003 ns )                    ; mc_interface:inst|cali[14]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.809 ns                ;
+; N/A                                     ; 250.19 MHz ( period = 3.997 ns )                    ; mc_interface:inst|cali[19]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.803 ns                ;
+; N/A                                     ; 250.63 MHz ( period = 3.990 ns )                    ; mc_interface:inst|cali[12]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.796 ns                ;
+; N/A                                     ; 253.49 MHz ( period = 3.945 ns )                    ; mc_interface:inst|cali[7]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.759 ns                ;
+; N/A                                     ; 253.74 MHz ( period = 3.941 ns )                    ; mc_interface:inst|cali[14]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.747 ns                ;
+; N/A                                     ; 254.58 MHz ( period = 3.928 ns )                    ; mc_interface:inst|cali[12]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.734 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[10]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[11]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[12]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[13]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[14]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.47 MHz ( period = 3.884 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 3.706 ns                ;
+; N/A                                     ; 257.53 MHz ( period = 3.883 ns )                    ; mc_interface:inst|cali[7]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.697 ns                ;
+; N/A                                     ; 257.80 MHz ( period = 3.879 ns )                    ; mc_interface:inst|cali[14]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.685 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; mc_interface:inst|cali[13]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.684 ns                ;
+; N/A                                     ; 258.67 MHz ( period = 3.866 ns )                    ; mc_interface:inst|cali[12]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.672 ns                ;
+; N/A                                     ; 260.96 MHz ( period = 3.832 ns )                    ; mc_interface:inst|cali[15]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.638 ns                ;
+; N/A                                     ; 261.03 MHz ( period = 3.831 ns )                    ; mc_interface:inst|cali[6]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.645 ns                ;
+; N/A                                     ; 262.05 MHz ( period = 3.816 ns )                    ; mc_interface:inst|cali[13]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.622 ns                ;
+; N/A                                     ; 265.25 MHz ( period = 3.770 ns )                    ; mc_interface:inst|cali[15]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.576 ns                ;
+; N/A                                     ; 265.32 MHz ( period = 3.769 ns )                    ; mc_interface:inst|cali[6]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.583 ns                ;
+; N/A                                     ; 265.46 MHz ( period = 3.767 ns )                    ; mc_interface:inst|cali[1]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.581 ns                ;
+; N/A                                     ; 266.38 MHz ( period = 3.754 ns )                    ; mc_interface:inst|cali[13]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[10]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[11]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[12]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[13]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[14]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 3.560 ns                ;
+; N/A                                     ; 267.52 MHz ( period = 3.738 ns )                    ; mc_interface:inst|cali[4]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.552 ns                ;
+; N/A                                     ; 268.67 MHz ( period = 3.722 ns )                    ; mc_interface:inst|cali[16]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.528 ns                ;
+; N/A                                     ; 268.96 MHz ( period = 3.718 ns )                    ; mc_interface:inst|cali[0]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.532 ns                ;
+; N/A                                     ; 269.69 MHz ( period = 3.708 ns )                    ; mc_interface:inst|cali[15]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.514 ns                ;
+; N/A                                     ; 269.76 MHz ( period = 3.707 ns )                    ; mc_interface:inst|cali[6]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.521 ns                ;
+; N/A                                     ; 269.91 MHz ( period = 3.705 ns )                    ; mc_interface:inst|cali[1]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.519 ns                ;
+; N/A                                     ; 272.03 MHz ( period = 3.676 ns )                    ; mc_interface:inst|cali[4]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.490 ns                ;
+; N/A                                     ; 272.55 MHz ( period = 3.669 ns )                    ; mc_interface:inst|cali[3]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.483 ns                ;
+; N/A                                     ; 273.22 MHz ( period = 3.660 ns )                    ; mc_interface:inst|cali[16]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.466 ns                ;
+; N/A                                     ; 273.52 MHz ( period = 3.656 ns )                    ; mc_interface:inst|cali[0]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.470 ns                ;
+; N/A                                     ; 274.50 MHz ( period = 3.643 ns )                    ; mc_interface:inst|cali[1]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.457 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[10]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[11]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[12]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[13]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[14]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.18 MHz ( period = 3.634 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 3.456 ns                ;
+; N/A                                     ; 275.86 MHz ( period = 3.625 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.439 ns                ;
+; N/A                                     ; 275.86 MHz ( period = 3.625 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.439 ns                ;
+; N/A                                     ; 275.86 MHz ( period = 3.625 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.439 ns                ;
+; N/A                                     ; 275.86 MHz ( period = 3.625 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.439 ns                ;
+; N/A                                     ; 276.24 MHz ( period = 3.620 ns )                    ; mc_interface:inst|cali[18]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.426 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[2]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[1]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[0]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[3]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[4]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[5]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[6]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[7]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[8]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.47 MHz ( period = 3.617 ns )                    ; mc_interface:inst|calinum[0] ; mc_interface:inst|cali[9]    ; clock      ; clock    ; None                        ; None                      ; 3.431 ns                ;
+; N/A                                     ; 276.70 MHz ( period = 3.614 ns )                    ; mc_interface:inst|cali[4]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.428 ns                ;
+; N/A                                     ; 276.93 MHz ( period = 3.611 ns )                    ; mc_interface:inst|cali[5]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.425 ns                ;
+; N/A                                     ; 277.24 MHz ( period = 3.607 ns )                    ; mc_interface:inst|cali[3]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.421 ns                ;
+; N/A                                     ; 277.78 MHz ( period = 3.600 ns )                    ; mc_interface:inst|cali[11]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.406 ns                ;
+; N/A                                     ; 277.93 MHz ( period = 3.598 ns )                    ; mc_interface:inst|cali[16]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.404 ns                ;
+; N/A                                     ; 278.24 MHz ( period = 3.594 ns )                    ; mc_interface:inst|cali[0]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.408 ns                ;
+; N/A                                     ; 280.58 MHz ( period = 3.564 ns )                    ; mc_interface:inst|cali[8]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.378 ns                ;
+; N/A                                     ; 281.06 MHz ( period = 3.558 ns )                    ; mc_interface:inst|cali[19]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.364 ns                ;
+; N/A                                     ; 281.06 MHz ( period = 3.558 ns )                    ; mc_interface:inst|cali[18]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.364 ns                ;
+; N/A                                     ; 281.77 MHz ( period = 3.549 ns )                    ; mc_interface:inst|cali[5]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.363 ns                ;
+; N/A                                     ; 282.09 MHz ( period = 3.545 ns )                    ; mc_interface:inst|cali[3]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.359 ns                ;
+; N/A                                     ; 282.65 MHz ( period = 3.538 ns )                    ; mc_interface:inst|cali[11]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.344 ns                ;
+; N/A                                     ; 283.45 MHz ( period = 3.528 ns )                    ; mc_interface:inst|cali[17]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.334 ns                ;
+; N/A                                     ; 285.55 MHz ( period = 3.502 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 285.55 MHz ( period = 3.502 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 285.55 MHz ( period = 3.502 ns )                    ; mc_interface:inst|cali[8]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 285.55 MHz ( period = 3.502 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 285.55 MHz ( period = 3.502 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.316 ns                ;
+; N/A                                     ; 286.04 MHz ( period = 3.496 ns )                    ; mc_interface:inst|cali[18]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.302 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[2]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[1]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[0]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[3]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[4]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[5]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[6]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[7]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[8]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.20 MHz ( period = 3.494 ns )                    ; mc_interface:inst|calinum[1] ; mc_interface:inst|cali[9]    ; clock      ; clock    ; None                        ; None                      ; 3.308 ns                ;
+; N/A                                     ; 286.78 MHz ( period = 3.487 ns )                    ; mc_interface:inst|cali[5]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.301 ns                ;
+; N/A                                     ; 287.69 MHz ( period = 3.476 ns )                    ; mc_interface:inst|cali[11]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.282 ns                ;
+; N/A                                     ; 288.52 MHz ( period = 3.466 ns )                    ; mc_interface:inst|cali[17]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.272 ns                ;
+; N/A                                     ; 290.36 MHz ( period = 3.444 ns )                    ; mc_interface:inst|cali[7]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.258 ns                ;
+; N/A                                     ; 290.70 MHz ( period = 3.440 ns )                    ; mc_interface:inst|cali[14]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.246 ns                ;
+; N/A                                     ; 290.70 MHz ( period = 3.440 ns )                    ; mc_interface:inst|cali[8]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.254 ns                ;
+; N/A                                     ; 291.80 MHz ( period = 3.427 ns )                    ; mc_interface:inst|cali[12]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.233 ns                ;
+; N/A                                     ; 293.17 MHz ( period = 3.411 ns )                    ; mc_interface:inst|cali[2]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.225 ns                ;
+; N/A                                     ; 293.77 MHz ( period = 3.404 ns )                    ; mc_interface:inst|cali[17]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.210 ns                ;
+; N/A                                     ; 297.97 MHz ( period = 3.356 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.170 ns                ;
+; N/A                                     ; 297.97 MHz ( period = 3.356 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.170 ns                ;
+; N/A                                     ; 297.97 MHz ( period = 3.356 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.170 ns                ;
+; N/A                                     ; 297.97 MHz ( period = 3.356 ns )                    ; mc_interface:inst|cali[10]   ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 297.97 MHz ( period = 3.356 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.170 ns                ;
+; N/A                                     ; 298.60 MHz ( period = 3.349 ns )                    ; mc_interface:inst|cali[2]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.163 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[2]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[1]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[0]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[3]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[4]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[5]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[6]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[7]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[8]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 298.69 MHz ( period = 3.348 ns )                    ; mc_interface:inst|calinum[2] ; mc_interface:inst|cali[9]    ; clock      ; clock    ; None                        ; None                      ; 3.162 ns                ;
+; N/A                                     ; 301.30 MHz ( period = 3.319 ns )                    ; mc_interface:inst|cali[9]    ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.133 ns                ;
+; N/A                                     ; 301.66 MHz ( period = 3.315 ns )                    ; mc_interface:inst|cali[13]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.121 ns                ;
+; N/A                                     ; 303.58 MHz ( period = 3.294 ns )                    ; mc_interface:inst|cali[10]   ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.100 ns                ;
+; N/A                                     ; 304.23 MHz ( period = 3.287 ns )                    ; mc_interface:inst|cali[2]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.101 ns                ;
+; N/A                                     ; 305.90 MHz ( period = 3.269 ns )                    ; mc_interface:inst|cali[15]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.075 ns                ;
+; N/A                                     ; 306.00 MHz ( period = 3.268 ns )                    ; mc_interface:inst|cali[6]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.082 ns                ;
+; N/A                                     ; 307.03 MHz ( period = 3.257 ns )                    ; mc_interface:inst|cali[9]    ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.071 ns                ;
+; N/A                                     ; 307.50 MHz ( period = 3.252 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.066 ns                ;
+; N/A                                     ; 307.50 MHz ( period = 3.252 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.066 ns                ;
+; N/A                                     ; 307.50 MHz ( period = 3.252 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|calinum[2] ; clock      ; clock    ; None                        ; None                      ; 3.066 ns                ;
+; N/A                                     ; 307.50 MHz ( period = 3.252 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|calinum[3] ; clock      ; clock    ; None                        ; None                      ; 3.066 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[2]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[1]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[0]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[3]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[4]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[5]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[6]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[7]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[8]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 308.26 MHz ( period = 3.244 ns )                    ; mc_interface:inst|calinum[3] ; mc_interface:inst|cali[9]    ; clock      ; clock    ; None                        ; None                      ; 3.058 ns                ;
+; N/A                                     ; 309.41 MHz ( period = 3.232 ns )                    ; mc_interface:inst|cali[10]   ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.038 ns                ;
+; N/A                                     ; 312.11 MHz ( period = 3.204 ns )                    ; mc_interface:inst|cali[1]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 3.018 ns                ;
+; N/A                                     ; 312.99 MHz ( period = 3.195 ns )                    ; mc_interface:inst|cali[9]    ; mc_interface:inst|calinum[1] ; clock      ; clock    ; None                        ; None                      ; 3.009 ns                ;
+; N/A                                     ; 314.96 MHz ( period = 3.175 ns )                    ; mc_interface:inst|cali[4]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.989 ns                ;
+; N/A                                     ; 316.56 MHz ( period = 3.159 ns )                    ; mc_interface:inst|cali[16]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.965 ns                ;
+; N/A                                     ; 316.96 MHz ( period = 3.155 ns )                    ; mc_interface:inst|cali[0]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.969 ns                ;
+; N/A                                     ; 321.96 MHz ( period = 3.106 ns )                    ; mc_interface:inst|cali[3]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.920 ns                ;
+; N/A                                     ; 327.12 MHz ( period = 3.057 ns )                    ; mc_interface:inst|cali[18]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.863 ns                ;
+; N/A                                     ; 328.08 MHz ( period = 3.048 ns )                    ; mc_interface:inst|cali[5]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.862 ns                ;
+; N/A                                     ; 329.27 MHz ( period = 3.037 ns )                    ; mc_interface:inst|cali[11]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.843 ns                ;
+; N/A                                     ; 333.22 MHz ( period = 3.001 ns )                    ; mc_interface:inst|cali[8]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.815 ns                ;
+; N/A                                     ; 337.27 MHz ( period = 2.965 ns )                    ; mc_interface:inst|cali[17]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.771 ns                ;
+; N/A                                     ; 351.12 MHz ( period = 2.848 ns )                    ; mc_interface:inst|cali[2]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.662 ns                ;
+; N/A                                     ; 358.04 MHz ( period = 2.793 ns )                    ; mc_interface:inst|cali[10]   ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.599 ns                ;
+; N/A                                     ; 362.84 MHz ( period = 2.756 ns )                    ; mc_interface:inst|cali[9]    ; mc_interface:inst|calinum[0] ; clock      ; clock    ; None                        ; None                      ; 2.570 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[2]    ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[0]    ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[2]    ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[0]    ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[2]    ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[0]    ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[2]    ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[0]    ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[2]    ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[0]    ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 1.954 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[1]    ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 1.890 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[1]    ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 1.890 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[1]    ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 1.890 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[1]    ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 1.890 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[1]    ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 1.890 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[3]    ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 1.887 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[3]    ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 1.887 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[3]    ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 1.887 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[3]    ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 1.887 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[3]    ; mc_interface:inst|cali[19]   ; clock      ; clock    ; None                        ; None                      ; 1.887 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[5]    ; mc_interface:inst|cali[15]   ; clock      ; clock    ; None                        ; None                      ; 1.880 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[5]    ; mc_interface:inst|cali[16]   ; clock      ; clock    ; None                        ; None                      ; 1.880 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[5]    ; mc_interface:inst|cali[17]   ; clock      ; clock    ; None                        ; None                      ; 1.880 ns                ;
+; N/A                                     ; Restricted to 422.12 MHz ( period = 2.369 ns )      ; mc_interface:inst|cali[5]    ; mc_interface:inst|cali[18]   ; clock      ; clock    ; None                        ; None                      ; 1.880 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                              ;                              ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'sclk'                                                                                                                                                                                                              ;
++-------+------------------------------------------------+------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                         ; To                           ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[1]  ; ADC_interface:inst1|data[2]  ; sclk       ; sclk     ; None                        ; None                      ; 0.834 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[3]  ; ADC_interface:inst1|data[4]  ; sclk       ; sclk     ; None                        ; None                      ; 0.810 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[7]  ; ADC_interface:inst1|data[8]  ; sclk       ; sclk     ; None                        ; None                      ; 0.809 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[4]  ; ADC_interface:inst1|data[5]  ; sclk       ; sclk     ; None                        ; None                      ; 0.809 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[0]  ; ADC_interface:inst1|data[1]  ; sclk       ; sclk     ; None                        ; None                      ; 0.671 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[10] ; ADC_interface:inst1|data[11] ; sclk       ; sclk     ; None                        ; None                      ; 0.665 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[9]  ; ADC_interface:inst1|data[10] ; sclk       ; sclk     ; None                        ; None                      ; 0.664 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[8]  ; ADC_interface:inst1|data[9]  ; sclk       ; sclk     ; None                        ; None                      ; 0.664 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[5]  ; ADC_interface:inst1|data[6]  ; sclk       ; sclk     ; None                        ; None                      ; 0.664 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[2]  ; ADC_interface:inst1|data[3]  ; sclk       ; sclk     ; None                        ; None                      ; 0.664 ns                ;
+; N/A   ; Restricted to 422.12 MHz ( period = 2.369 ns ) ; ADC_interface:inst1|data[6]  ; ADC_interface:inst1|data[7]  ; sclk       ; sclk     ; None                        ; None                      ; 0.663 ns                ;
++-------+------------------------------------------------+------------------------------+------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; tsu                                                                                       ;
++-------+--------------+------------+------------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From       ; To                            ; To Clock ;
++-------+--------------+------------+------------+-------------------------------+----------+
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[10]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[11]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[12]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[13]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[14]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[15]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[16]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[17]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[18]    ; clock    ;
+; N/A   ; None         ; 6.255 ns   ; reset      ; mc_interface:inst|cali[19]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[10]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[11]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[12]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[13]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[14]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[15]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[16]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[17]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[18]    ; clock    ;
+; N/A   ; None         ; 5.934 ns   ; start_cali ; mc_interface:inst|cali[19]    ; clock    ;
+; N/A   ; None         ; 5.873 ns   ; reset      ; mc_interface:inst|calinum[0]  ; clock    ;
+; N/A   ; None         ; 5.873 ns   ; reset      ; mc_interface:inst|calinum[1]  ; clock    ;
+; N/A   ; None         ; 5.873 ns   ; reset      ; mc_interface:inst|calinum[2]  ; clock    ;
+; N/A   ; None         ; 5.873 ns   ; reset      ; mc_interface:inst|calinum[3]  ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[2]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[1]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[0]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[3]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[4]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[5]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[6]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[7]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[8]     ; clock    ;
+; N/A   ; None         ; 5.865 ns   ; reset      ; mc_interface:inst|cali[9]     ; clock    ;
+; N/A   ; None         ; 5.552 ns   ; start_cali ; mc_interface:inst|calinum[0]  ; clock    ;
+; N/A   ; None         ; 5.552 ns   ; start_cali ; mc_interface:inst|calinum[1]  ; clock    ;
+; N/A   ; None         ; 5.552 ns   ; start_cali ; mc_interface:inst|calinum[2]  ; clock    ;
+; N/A   ; None         ; 5.552 ns   ; start_cali ; mc_interface:inst|calinum[3]  ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[2]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[1]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[0]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[3]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[4]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[5]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[6]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[7]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[8]     ; clock    ;
+; N/A   ; None         ; 5.544 ns   ; start_cali ; mc_interface:inst|cali[9]     ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[10]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[11]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[12]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[13]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[14]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[15]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[16]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[17]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[18]    ; clock    ;
+; N/A   ; None         ; 5.541 ns   ; done       ; mc_interface:inst|cali[19]    ; clock    ;
+; N/A   ; None         ; 5.159 ns   ; done       ; mc_interface:inst|calinum[0]  ; clock    ;
+; N/A   ; None         ; 5.159 ns   ; done       ; mc_interface:inst|calinum[1]  ; clock    ;
+; N/A   ; None         ; 5.159 ns   ; done       ; mc_interface:inst|calinum[2]  ; clock    ;
+; N/A   ; None         ; 5.159 ns   ; done       ; mc_interface:inst|calinum[3]  ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[2]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[1]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[0]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[3]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[4]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[5]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[6]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[7]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[8]     ; clock    ;
+; N/A   ; None         ; 5.151 ns   ; done       ; mc_interface:inst|cali[9]     ; clock    ;
+; N/A   ; None         ; 4.658 ns   ; reset      ; ADC_interface:inst1|cs_n      ; clock    ;
+; N/A   ; None         ; 3.994 ns   ; reset      ; ADC_interface:inst1|state.001 ; clock    ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[11]  ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[10]  ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[9]   ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[8]   ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[7]   ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[6]   ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[5]   ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[4]   ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[3]   ; sclk     ;
+; N/A   ; None         ; 2.661 ns   ; reset      ; ADC_interface:inst1|data[2]   ; sclk     ;
+; N/A   ; None         ; 2.448 ns   ; drdy_n     ; ADC_interface:inst1|state.001 ; clock    ;
+; N/A   ; None         ; 2.397 ns   ; reset      ; ADC_interface:inst1|data[1]   ; sclk     ;
+; N/A   ; None         ; 2.397 ns   ; reset      ; ADC_interface:inst1|data[0]   ; sclk     ;
+; N/A   ; None         ; 2.197 ns   ; drdy_n     ; ADC_interface:inst1|cs_n      ; clock    ;
+; N/A   ; None         ; 0.096 ns   ; sdata      ; ADC_interface:inst1|data[0]   ; sclk     ;
++-------+--------------+------------+------------+-------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------+
+; tco                                                                                          ;
++-------+--------------+------------+------------------------------+--------------+------------+
+; Slack ; Required tco ; Actual tco ; From                         ; To           ; From Clock ;
++-------+--------------+------------+------------------------------+--------------+------------+
+; N/A   ; None         ; 12.982 ns  ; ADC_interface:inst1|data[3]  ; data_out[3]  ; sclk       ;
+; N/A   ; None         ; 12.716 ns  ; ADC_interface:inst1|data[5]  ; data_out[5]  ; sclk       ;
+; N/A   ; None         ; 12.631 ns  ; ADC_interface:inst1|data[2]  ; data_out[2]  ; sclk       ;
+; N/A   ; None         ; 12.627 ns  ; ADC_interface:inst1|data[0]  ; data_out[0]  ; sclk       ;
+; N/A   ; None         ; 12.470 ns  ; ADC_interface:inst1|data[6]  ; data_out[6]  ; sclk       ;
+; N/A   ; None         ; 12.377 ns  ; ADC_interface:inst1|data[4]  ; data_out[4]  ; sclk       ;
+; N/A   ; None         ; 12.236 ns  ; ADC_interface:inst1|data[7]  ; data_out[7]  ; sclk       ;
+; N/A   ; None         ; 12.140 ns  ; ADC_interface:inst1|data[1]  ; data_out[1]  ; sclk       ;
+; N/A   ; None         ; 11.991 ns  ; ADC_interface:inst1|data[11] ; data_out[11] ; sclk       ;
+; N/A   ; None         ; 11.511 ns  ; ADC_interface:inst1|data[8]  ; data_out[8]  ; sclk       ;
+; N/A   ; None         ; 11.399 ns  ; ADC_interface:inst1|data[9]  ; data_out[9]  ; sclk       ;
+; N/A   ; None         ; 11.256 ns  ; ADC_interface:inst1|data[10] ; data_out[10] ; sclk       ;
+; N/A   ; None         ; 10.470 ns  ; mc_interface:inst|cali[19]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.356 ns  ; mc_interface:inst|cali[7]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.352 ns  ; mc_interface:inst|cali[14]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.339 ns  ; mc_interface:inst|cali[12]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.227 ns  ; mc_interface:inst|cali[13]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.181 ns  ; mc_interface:inst|cali[15]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.180 ns  ; mc_interface:inst|cali[6]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.116 ns  ; mc_interface:inst|cali[1]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.087 ns  ; mc_interface:inst|cali[4]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.071 ns  ; mc_interface:inst|cali[16]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.067 ns  ; mc_interface:inst|cali[0]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 10.018 ns  ; mc_interface:inst|cali[3]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.969 ns   ; mc_interface:inst|cali[18]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.960 ns   ; mc_interface:inst|cali[5]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.949 ns   ; mc_interface:inst|cali[11]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.913 ns   ; mc_interface:inst|cali[8]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.877 ns   ; mc_interface:inst|cali[17]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.760 ns   ; mc_interface:inst|cali[2]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.705 ns   ; mc_interface:inst|cali[10]   ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.668 ns   ; mc_interface:inst|cali[9]    ; calibrate    ; clock      ;
+; N/A   ; None         ; 9.539 ns   ; mc_interface:inst|calinum[0] ; ready        ; clock      ;
+; N/A   ; None         ; 9.416 ns   ; mc_interface:inst|calinum[1] ; ready        ; clock      ;
+; N/A   ; None         ; 9.270 ns   ; mc_interface:inst|calinum[2] ; ready        ; clock      ;
+; N/A   ; None         ; 9.166 ns   ; mc_interface:inst|calinum[3] ; ready        ; clock      ;
+; N/A   ; None         ; 7.859 ns   ; ADC_interface:inst1|cs_n     ; cs_n         ; clock      ;
++-------+--------------+------------+------------------------------+--------------+------------+
+
+
++-------------------------------------------------------------------------+
+; tpd                                                                     ;
++-------+-------------------+-----------------+------------+--------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From       ; To           ;
++-------+-------------------+-----------------+------------+--------------+
+; N/A   ; None              ; 12.250 ns       ; read       ; data_out[1]  ;
+; N/A   ; None              ; 12.158 ns       ; read       ; data_out[0]  ;
+; N/A   ; None              ; 12.092 ns       ; read       ; data_out[3]  ;
+; N/A   ; None              ; 11.884 ns       ; read       ; data_out[2]  ;
+; N/A   ; None              ; 11.810 ns       ; read       ; data_out[5]  ;
+; N/A   ; None              ; 11.682 ns       ; read       ; data_out[6]  ;
+; N/A   ; None              ; 11.629 ns       ; read       ; data_out[11] ;
+; N/A   ; None              ; 11.610 ns       ; read       ; data_out[4]  ;
+; N/A   ; None              ; 11.573 ns       ; read       ; data_out[7]  ;
+; N/A   ; None              ; 11.279 ns       ; rate[3]    ; data_out[3]  ;
+; N/A   ; None              ; 11.203 ns       ; rate[0]    ; data_out[0]  ;
+; N/A   ; None              ; 11.110 ns       ; start_cali ; ready        ;
+; N/A   ; None              ; 11.109 ns       ; rate[1]    ; data_out[1]  ;
+; N/A   ; None              ; 10.901 ns       ; rate[5]    ; data_out[5]  ;
+; N/A   ; None              ; 10.877 ns       ; rate[2]    ; data_out[2]  ;
+; N/A   ; None              ; 10.763 ns       ; read       ; data_out[8]  ;
+; N/A   ; None              ; 10.735 ns       ; rate[7]    ; data_out[7]  ;
+; N/A   ; None              ; 10.662 ns       ; rate[4]    ; data_out[4]  ;
+; N/A   ; None              ; 10.502 ns       ; rate[6]    ; data_out[6]  ;
+; N/A   ; None              ; 10.499 ns       ; read       ; data_out[10] ;
+; N/A   ; None              ; 10.494 ns       ; read       ; data_out[9]  ;
+; N/A   ; None              ; 10.483 ns       ; done       ; ready        ;
+; N/A   ; None              ; 10.291 ns       ; gain[3]    ; data_out[11] ;
+; N/A   ; None              ; 9.852 ns        ; gain[0]    ; data_out[8]  ;
+; N/A   ; None              ; 9.499 ns        ; gain[2]    ; data_out[10] ;
+; N/A   ; None              ; 9.327 ns        ; gain[1]    ; data_out[9]  ;
++-------+-------------------+-----------------+------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; th                                                                                              ;
++---------------+-------------+-----------+------------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From       ; To                            ; To Clock ;
++---------------+-------------+-----------+------------+-------------------------------+----------+
+; N/A           ; None        ; 0.014 ns  ; sdata      ; ADC_interface:inst1|data[0]   ; sclk     ;
+; N/A           ; None        ; -1.363 ns ; reset      ; ADC_interface:inst1|data[0]   ; sclk     ;
+; N/A           ; None        ; -1.599 ns ; reset      ; ADC_interface:inst1|data[1]   ; sclk     ;
+; N/A           ; None        ; -1.814 ns ; reset      ; ADC_interface:inst1|data[10]  ; sclk     ;
+; N/A           ; None        ; -1.815 ns ; reset      ; ADC_interface:inst1|data[9]   ; sclk     ;
+; N/A           ; None        ; -1.816 ns ; reset      ; ADC_interface:inst1|data[7]   ; sclk     ;
+; N/A           ; None        ; -1.816 ns ; reset      ; ADC_interface:inst1|data[6]   ; sclk     ;
+; N/A           ; None        ; -1.816 ns ; reset      ; ADC_interface:inst1|data[3]   ; sclk     ;
+; N/A           ; None        ; -1.819 ns ; reset      ; ADC_interface:inst1|data[11]  ; sclk     ;
+; N/A           ; None        ; -1.819 ns ; reset      ; ADC_interface:inst1|data[2]   ; sclk     ;
+; N/A           ; None        ; -2.038 ns ; reset      ; ADC_interface:inst1|data[5]   ; sclk     ;
+; N/A           ; None        ; -2.040 ns ; reset      ; ADC_interface:inst1|data[4]   ; sclk     ;
+; N/A           ; None        ; -2.041 ns ; reset      ; ADC_interface:inst1|data[8]   ; sclk     ;
+; N/A           ; None        ; -2.087 ns ; drdy_n     ; ADC_interface:inst1|cs_n      ; clock    ;
+; N/A           ; None        ; -2.338 ns ; drdy_n     ; ADC_interface:inst1|state.001 ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[10]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[11]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[12]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[13]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[14]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[15]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[16]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[17]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[18]    ; clock    ;
+; N/A           ; None        ; -3.526 ns ; reset      ; mc_interface:inst|cali[19]    ; clock    ;
+; N/A           ; None        ; -3.874 ns ; start_cali ; mc_interface:inst|cali[0]     ; clock    ;
+; N/A           ; None        ; -3.884 ns ; reset      ; ADC_interface:inst1|state.001 ; clock    ;
+; N/A           ; None        ; -4.305 ns ; start_cali ; mc_interface:inst|cali[1]     ; clock    ;
+; N/A           ; None        ; -4.365 ns ; start_cali ; mc_interface:inst|cali[2]     ; clock    ;
+; N/A           ; None        ; -4.425 ns ; start_cali ; mc_interface:inst|cali[3]     ; clock    ;
+; N/A           ; None        ; -4.485 ns ; start_cali ; mc_interface:inst|cali[4]     ; clock    ;
+; N/A           ; None        ; -4.548 ns ; reset      ; ADC_interface:inst1|cs_n      ; clock    ;
+; N/A           ; None        ; -4.656 ns ; start_cali ; mc_interface:inst|cali[5]     ; clock    ;
+; N/A           ; None        ; -4.656 ns ; start_cali ; mc_interface:inst|cali[6]     ; clock    ;
+; N/A           ; None        ; -4.656 ns ; start_cali ; mc_interface:inst|cali[7]     ; clock    ;
+; N/A           ; None        ; -4.656 ns ; start_cali ; mc_interface:inst|cali[8]     ; clock    ;
+; N/A           ; None        ; -4.656 ns ; start_cali ; mc_interface:inst|cali[9]     ; clock    ;
+; N/A           ; None        ; -4.730 ns ; reset      ; mc_interface:inst|calinum[0]  ; clock    ;
+; N/A           ; None        ; -4.730 ns ; reset      ; mc_interface:inst|calinum[1]  ; clock    ;
+; N/A           ; None        ; -4.730 ns ; reset      ; mc_interface:inst|calinum[2]  ; clock    ;
+; N/A           ; None        ; -4.730 ns ; reset      ; mc_interface:inst|calinum[3]  ; clock    ;
+; N/A           ; None        ; -4.824 ns ; start_cali ; mc_interface:inst|cali[10]    ; clock    ;
+; N/A           ; None        ; -4.824 ns ; start_cali ; mc_interface:inst|cali[11]    ; clock    ;
+; N/A           ; None        ; -4.824 ns ; start_cali ; mc_interface:inst|cali[12]    ; clock    ;
+; N/A           ; None        ; -4.824 ns ; start_cali ; mc_interface:inst|cali[13]    ; clock    ;
+; N/A           ; None        ; -4.824 ns ; start_cali ; mc_interface:inst|cali[14]    ; clock    ;
+; N/A           ; None        ; -4.913 ns ; start_cali ; mc_interface:inst|cali[15]    ; clock    ;
+; N/A           ; None        ; -4.913 ns ; start_cali ; mc_interface:inst|cali[16]    ; clock    ;
+; N/A           ; None        ; -4.913 ns ; start_cali ; mc_interface:inst|cali[17]    ; clock    ;
+; N/A           ; None        ; -4.913 ns ; start_cali ; mc_interface:inst|cali[18]    ; clock    ;
+; N/A           ; None        ; -4.913 ns ; start_cali ; mc_interface:inst|cali[19]    ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[2]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[1]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[0]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[3]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[4]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[5]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[6]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[7]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[8]     ; clock    ;
+; N/A           ; None        ; -4.968 ns ; reset      ; mc_interface:inst|cali[9]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[2]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[1]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[0]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[3]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[4]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[5]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[6]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[7]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[8]     ; clock    ;
+; N/A           ; None        ; -5.041 ns ; done       ; mc_interface:inst|cali[9]     ; clock    ;
+; N/A           ; None        ; -5.049 ns ; done       ; mc_interface:inst|calinum[0]  ; clock    ;
+; N/A           ; None        ; -5.049 ns ; done       ; mc_interface:inst|calinum[1]  ; clock    ;
+; N/A           ; None        ; -5.049 ns ; done       ; mc_interface:inst|calinum[2]  ; clock    ;
+; N/A           ; None        ; -5.049 ns ; done       ; mc_interface:inst|calinum[3]  ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[10]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[11]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[12]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[13]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[14]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[15]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[16]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[17]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[18]    ; clock    ;
+; N/A           ; None        ; -5.431 ns ; done       ; mc_interface:inst|cali[19]    ; clock    ;
+; N/A           ; None        ; -5.442 ns ; start_cali ; mc_interface:inst|calinum[0]  ; clock    ;
+; N/A           ; None        ; -5.442 ns ; start_cali ; mc_interface:inst|calinum[1]  ; clock    ;
+; N/A           ; None        ; -5.442 ns ; start_cali ; mc_interface:inst|calinum[2]  ; clock    ;
+; N/A           ; None        ; -5.442 ns ; start_cali ; mc_interface:inst|calinum[3]  ; clock    ;
++---------------+-------------+-----------+------------+-------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Full Version
+    Info: Processing started: Mon Apr 07 15:11:34 2008
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off mc_interface -c mc_interface --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clock" is an undefined clock
+    Info: Assuming node "sclk" is an undefined clock
+Info: Clock "clock" has Internal fmax of 242.66 MHz between source register "mc_interface:inst|cali[19]" and destination register "mc_interface:inst|calinum[3]" (period= 4.121 ns)
+    Info: + Longest register to register delay is 3.927 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X18_Y5_N9; Fanout = 2; REG Node = 'mc_interface:inst|cali[19]'
+        Info: 2: + IC(0.943 ns) + CELL(0.459 ns) = 1.402 ns; Loc. = LC_X17_Y5_N5; Fanout = 1; COMB Node = 'mc_interface:inst|WideAnd1~154'
+        Info: 3: + IC(1.045 ns) + CELL(0.087 ns) = 2.534 ns; Loc. = LC_X17_Y6_N5; Fanout = 4; COMB Node = 'mc_interface:inst|WideAnd1'
+        Info: 4: + IC(0.341 ns) + CELL(0.341 ns) = 3.216 ns; Loc. = LC_X17_Y6_N6; Fanout = 2; COMB Node = 'mc_interface:inst|calinum[0]~76COUT1_82'
+        Info: 5: + IC(0.000 ns) + CELL(0.062 ns) = 3.278 ns; Loc. = LC_X17_Y6_N7; Fanout = 2; COMB Node = 'mc_interface:inst|calinum[1]~77COUT1'
+        Info: 6: + IC(0.000 ns) + CELL(0.062 ns) = 3.340 ns; Loc. = LC_X17_Y6_N8; Fanout = 1; COMB Node = 'mc_interface:inst|calinum[2]~78COUT1_83'
+        Info: 7: + IC(0.000 ns) + CELL(0.587 ns) = 3.927 ns; Loc. = LC_X17_Y6_N9; Fanout = 2; REG Node = 'mc_interface:inst|calinum[3]'
+        Info: Total cell delay = 1.598 ns ( 40.69 % )
+        Info: Total interconnect delay = 2.329 ns ( 59.31 % )
+    Info: - Smallest clock skew is -0.008 ns
+        Info: + Shortest clock path from clock "clock" to destination register is 3.469 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_K17; Fanout = 26; CLK Node = 'clock'
+            Info: 2: + IC(1.889 ns) + CELL(0.560 ns) = 3.469 ns; Loc. = LC_X17_Y6_N9; Fanout = 2; REG Node = 'mc_interface:inst|calinum[3]'
+            Info: Total cell delay = 1.580 ns ( 45.55 % )
+            Info: Total interconnect delay = 1.889 ns ( 54.45 % )
+        Info: - Longest clock path from clock "clock" to source register is 3.477 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_K17; Fanout = 26; CLK Node = 'clock'
+            Info: 2: + IC(1.897 ns) + CELL(0.560 ns) = 3.477 ns; Loc. = LC_X18_Y5_N9; Fanout = 2; REG Node = 'mc_interface:inst|cali[19]'
+            Info: Total cell delay = 1.580 ns ( 45.44 % )
+            Info: Total interconnect delay = 1.897 ns ( 54.56 % )
+    Info: + Micro clock to output delay of source is 0.176 ns
+    Info: + Micro setup delay of destination is 0.010 ns
+Info: Clock "sclk" Internal fmax is restricted to 422.12 MHz between source register "ADC_interface:inst1|data[1]" and destination register "ADC_interface:inst1|data[2]"
+    Info: fmax restricted to clock pin edge rate 2.369 ns. Expand message to see actual delay path.
+        Info: + Longest register to register delay is 0.834 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X13_Y6_N5; Fanout = 2; REG Node = 'ADC_interface:inst1|data[1]'
+            Info: 2: + IC(0.599 ns) + CELL(0.235 ns) = 0.834 ns; Loc. = LC_X12_Y6_N0; Fanout = 2; REG Node = 'ADC_interface:inst1|data[2]'
+            Info: Total cell delay = 0.235 ns ( 28.18 % )
+            Info: Total interconnect delay = 0.599 ns ( 71.82 % )
+        Info: - Smallest clock skew is 0.000 ns
+            Info: + Shortest clock path from clock "sclk" to destination register is 6.006 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.141 ns) = 1.141 ns; Loc. = PIN_AD21; Fanout = 12; CLK Node = 'sclk'
+                Info: 2: + IC(4.305 ns) + CELL(0.560 ns) = 6.006 ns; Loc. = LC_X12_Y6_N0; Fanout = 2; REG Node = 'ADC_interface:inst1|data[2]'
+                Info: Total cell delay = 1.701 ns ( 28.32 % )
+                Info: Total interconnect delay = 4.305 ns ( 71.68 % )
+            Info: - Longest clock path from clock "sclk" to source register is 6.006 ns
+                Info: 1: + IC(0.000 ns) + CELL(1.141 ns) = 1.141 ns; Loc. = PIN_AD21; Fanout = 12; CLK Node = 'sclk'
+                Info: 2: + IC(4.305 ns) + CELL(0.560 ns) = 6.006 ns; Loc. = LC_X13_Y6_N5; Fanout = 2; REG Node = 'ADC_interface:inst1|data[1]'
+                Info: Total cell delay = 1.701 ns ( 28.32 % )
+                Info: Total interconnect delay = 4.305 ns ( 71.68 % )
+        Info: + Micro clock to output delay of source is 0.176 ns
+        Info: + Micro setup delay of destination is 0.010 ns
+Info: tsu for register "mc_interface:inst|cali[10]" (data pin = "reset", clock pin = "clock") is 6.255 ns
+    Info: + Longest pin to register delay is 9.722 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.295 ns) = 1.295 ns; Loc. = PIN_W5; Fanout = 40; PIN Node = 'reset'
+        Info: 2: + IC(6.098 ns) + CELL(0.213 ns) = 7.606 ns; Loc. = LC_X13_Y6_N2; Fanout = 24; COMB Node = 'mc_interface:inst|calinum[1]~80'
+        Info: 3: + IC(1.390 ns) + CELL(0.726 ns) = 9.722 ns; Loc. = LC_X18_Y5_N0; Fanout = 4; REG Node = 'mc_interface:inst|cali[10]'
+        Info: Total cell delay = 2.234 ns ( 22.98 % )
+        Info: Total interconnect delay = 7.488 ns ( 77.02 % )
+    Info: + Micro setup delay of destination is 0.010 ns
+    Info: - Shortest clock path from clock "clock" to destination register is 3.477 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.020 ns) = 1.020 ns; Loc. = PIN_K17; Fanout = 26; CLK Node = 'clock'
+        Info: 2: + IC(1.897 ns) + CELL(0.560 ns) = 3.477 ns; Loc. = LC_X18_Y5_N0; Fanout = 4; REG Node = 'mc_interface:inst|cali[10]'
+        Info: Total cell delay = 1.580 ns ( 45.44 % )
+        Info: Total interconnect delay = 1.897 ns ( 54.56 % )
+Info: tco from clock "sclk" to destination pin "data_out[3]" through register "ADC_interface:inst1|data[3]" is 12.982 ns
+    Info: + Longest clock path from clock "sclk" to source register is 6.006 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.141 ns) = 1.141 ns; Loc. = PIN_AD21; Fanout = 12; CLK Node = 'sclk'
+        Info: 2: + IC(4.305 ns) + CELL(0.560 ns) = 6.006 ns; Loc. = LC_X12_Y6_N3; Fanout = 2; REG Node = 'ADC_interface:inst1|data[3]'
+        Info: Total cell delay = 1.701 ns ( 28.32 % )
+        Info: Total interconnect delay = 4.305 ns ( 71.68 % )
+    Info: + Micro clock to output delay of source is 0.176 ns
+    Info: + Longest register to pin delay is 6.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X12_Y6_N3; Fanout = 2; REG Node = 'ADC_interface:inst1|data[3]'
+        Info: 2: + IC(0.915 ns) + CELL(0.459 ns) = 1.374 ns; Loc. = LC_X9_Y6_N3; Fanout = 1; COMB Node = 'mc_interface:inst|data_out[3]~128'
+        Info: 3: + IC(2.931 ns) + CELL(2.495 ns) = 6.800 ns; Loc. = PIN_L24; Fanout = 0; PIN Node = 'data_out[3]'
+        Info: Total cell delay = 2.954 ns ( 43.44 % )
+        Info: Total interconnect delay = 3.846 ns ( 56.56 % )
+Info: Longest tpd from source pin "read" to destination pin "data_out[1]" is 12.250 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.295 ns) = 1.295 ns; Loc. = PIN_AB2; Fanout = 12; PIN Node = 'read'
+    Info: 2: + IC(5.200 ns) + CELL(0.459 ns) = 6.954 ns; Loc. = LC_X13_Y6_N8; Fanout = 1; COMB Node = 'mc_interface:inst|data_out[1]~130'
+    Info: 3: + IC(2.801 ns) + CELL(2.495 ns) = 12.250 ns; Loc. = PIN_H28; Fanout = 0; PIN Node = 'data_out[1]'
+    Info: Total cell delay = 4.249 ns ( 34.69 % )
+    Info: Total interconnect delay = 8.001 ns ( 65.31 % )
+Info: th for register "ADC_interface:inst1|data[0]" (data pin = "sdata", clock pin = "sclk") is 0.014 ns
+    Info: + Longest clock path from clock "sclk" to destination register is 6.006 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.141 ns) = 1.141 ns; Loc. = PIN_AD21; Fanout = 12; CLK Node = 'sclk'
+        Info: 2: + IC(4.305 ns) + CELL(0.560 ns) = 6.006 ns; Loc. = LC_X13_Y6_N0; Fanout = 2; REG Node = 'ADC_interface:inst1|data[0]'
+        Info: Total cell delay = 1.701 ns ( 28.32 % )
+        Info: Total interconnect delay = 4.305 ns ( 71.68 % )
+    Info: + Micro hold delay of destination is 0.100 ns
+    Info: - Shortest pin to register delay is 6.092 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.141 ns) = 1.141 ns; Loc. = PIN_AG22; Fanout = 1; PIN Node = 'sdata'
+        Info: 2: + IC(4.462 ns) + CELL(0.489 ns) = 6.092 ns; Loc. = LC_X13_Y6_N0; Fanout = 2; REG Node = 'ADC_interface:inst1|data[0]'
+        Info: Total cell delay = 1.630 ns ( 26.76 % )
+        Info: Total interconnect delay = 4.462 ns ( 73.24 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Processing ended: Mon Apr 07 15:11:35 2008
+    Info: Elapsed time: 00:00:02
+
+

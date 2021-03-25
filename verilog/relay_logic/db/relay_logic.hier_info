@@ -1,0 +1,82 @@
+|test
+pin13 <= relay_logic:inst.pin13
+clock => relay_logic:inst.clock
+toHigh => relay_logic:inst.toHigh
+toLow => relay_logic:inst.toLow
+reset => relay_logic:inst.reset
+sample => relay_logic:inst.sample
+pin12 <= relay_logic:inst.pin12
+gain[0] <= relay_logic:inst.gain[0]
+gain[1] <= relay_logic:inst.gain[1]
+gain[2] <= relay_logic:inst.gain[2]
+gain[3] <= relay_logic:inst.gain[3]
+pin11[0] <= relay_logic:inst.pin11[0]
+pin11[1] <= relay_logic:inst.pin11[1]
+pin11[2] <= relay_logic:inst.pin11[2]
+pin3[0] <= relay_logic:inst.pin3[0]
+pin3[1] <= relay_logic:inst.pin3[1]
+pin3[2] <= relay_logic:inst.pin3[2]
+
+
+|test|relay_logic:inst
+clock => clock~0.IN1
+toHigh => toHigh~0.IN1
+toLow => toLow~0.IN1
+reset => reset~0.IN1
+sample => sample~0.IN1
+pin3[0] <= count_to_relays:MAP.port1
+pin3[1] <= count_to_relays:MAP.port1
+pin3[2] <= count_to_relays:MAP.port1
+pin11[0] <= count_to_relays:MAP.port2
+pin11[1] <= count_to_relays:MAP.port2
+pin11[2] <= count_to_relays:MAP.port2
+pin12 <= count_to_relays:MAP.port3
+pin13 <= count_to_relays:MAP.port4
+gain[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+gain[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+gain[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+gain[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|relay_logic:inst|counter:LEVEL
+clock => count[2]~reg0.CLK
+clock => count[1]~reg0.CLK
+clock => count[0]~reg0.CLK
+clock => count[3]~reg0.CLK
+toHigh => count~4.OUTPUTSELECT
+toHigh => count~5.OUTPUTSELECT
+toHigh => count~6.OUTPUTSELECT
+toHigh => count~7.OUTPUTSELECT
+toLow => count~0.OUTPUTSELECT
+toLow => count~1.OUTPUTSELECT
+toLow => count~2.OUTPUTSELECT
+toLow => count~3.OUTPUTSELECT
+reset => count~16.OUTPUTSELECT
+reset => count~17.OUTPUTSELECT
+reset => count~18.OUTPUTSELECT
+reset => count~19.OUTPUTSELECT
+enable => count~12.OUTPUTSELECT
+enable => count~13.OUTPUTSELECT
+enable => count~14.OUTPUTSELECT
+enable => count~15.OUTPUTSELECT
+count[0] <= count[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[1] <= count[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[2] <= count[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count[3] <= count[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|relay_logic:inst|count_to_relays:MAP
+count[0] => Decoder0.IN3
+count[1] => Decoder0.IN2
+count[2] => Decoder0.IN1
+count[3] => Decoder0.IN0
+pin3[0] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+pin3[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+pin3[2] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+pin11[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+pin11[1] <= relays~0.DB_MAX_OUTPUT_PORT_TYPE
+pin11[2] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+pin12 <= relays~1.DB_MAX_OUTPUT_PORT_TYPE
+pin13 <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+
+
